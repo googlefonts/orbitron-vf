@@ -1,9 +1,9 @@
 # Source Notes
 
-The font file `Orbitron/fonts/Orbitron.ttf` is built from source using the following command from the root directory:
+The font file `Orbitron/fonts/Orbitron-VF.ttf` is built from source using the following command from the root directory:
 
 ```
-py sources/BUILD.py && gftools fix-dsig fonts/Orbitron.ttf --autofix
+py sources/BUILD.py && gftools fix-dsig fonts/Orbitron-VF.ttf --autofix
 ```
 
 Dependencies installed should include:
