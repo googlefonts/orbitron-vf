@@ -4,9 +4,10 @@ DisplayStrings = (
 A,
 "Á",
 "Æ",
-"Â"
+"Â",
+"/uniE000"
 );
-copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron).";
+copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)";
 customParameters = (
 {
 name = license;
@@ -20266,6 +20267,7 @@ width = 600;
 unicode = 0000;
 },
 {
+export = 0;
 glyphname = uniE000;
 layers = (
 {
@@ -20319,10 +20321,10 @@ n
 );
 }
 );
-interpolationWeight = 550;
+interpolationWeight = 500;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.7;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.3;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.8;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.2;
 };
 name = Medium;
 weightClass = Medium;
@@ -20343,10 +20345,10 @@ n
 );
 }
 );
-interpolationWeight = 650;
+interpolationWeight = 700;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.5;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.5;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.4;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.6;
 };
 isBold = 1;
 name = Bold;
@@ -21111,6 +21113,7 @@ z = -29;
 };
 };
 manufacturer = "The League of Moveable Type";
+manufacturerURL = "https://www.theleagueofmoveabletype.com/";
 unitsPerEm = 1000;
 userData = {
 GSDimensionPlugin.Dimensions = {
@@ -21389,6 +21392,6 @@ uniE000,
 };
 UFOFormat = 3;
 };
-versionMajor = 1;
+versionMajor = 2;
 versionMinor = 0;
 }
