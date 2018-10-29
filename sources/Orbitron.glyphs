@@ -11,7 +11,7 @@ M,
 "/ringcomb/ring",
 "/ring"
 );
-copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)";
+copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron).";
 customParameters = (
 {
 name = license;
@@ -16165,7 +16165,6 @@ unicode = 0020;
 },
 {
 color = 10;
-export = 0;
 glyphname = nbspace;
 layers = (
 {
