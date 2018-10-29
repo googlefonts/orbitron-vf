@@ -20,13 +20,11 @@ print("\n**** Moving fonts to fonts directory")
 subprocess.call("cp variable_ttf/%s-VF.ttf fonts/" %FONT, shell=True)
 print("     [+] Done")
 
-
 # CLEANUP
 print("\n**** Removing build directories")
 print("     [+] Run: rm -rf variable_ttf master_ufo")
 subprocess.call("rm -rf variable_ttf master_ufo", shell=True)
 print("     [+] Done")
-
 
 # AUTOHINT
 print("\n**** Run: ttfautohint")
@@ -38,14 +36,12 @@ subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" %(FONT, FONT), shell=True)
 subprocess.call("rm -rf %s-VF-Fix.ttf" %FONT, shell=True)
 print("     [+] Done")
 
-
 # GFTOOLS
 print("\n**** Run: gftools")
 os.chdir("..")
 cwd = os.getcwd()
 print("     [+] In Directory:", cwd)
 #subprocess.call("gftools fix-dsgi fonts/Foo-VF.ttf --autofix", shell=True)
-
 
 # FONTTOOLS
 print("\n**** Run: edit xAvgCharWidth")
