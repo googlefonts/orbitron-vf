@@ -1,22 +1,23 @@
-import argparse
 import os
 import subprocess
 from fontTools.ttLib import TTFont
 
+# STATIC VARIABLES
+FONT = "Orbitron"
+ROOT = "orbitron-vf"
 
 # FONTMAKE
 try:
     print("\n**** Running Fontmake")
-    print("     [+] Run: fontmake -g sources/Orbitron.glyphs -o variable")
-    subprocess.call("fontmake -g sources/Orbitron.glyphs -o variable > /dev/null 2>&1", shell=True)
+    print("     [+] Run: fontmake -g sources/%s.glyphs -o variable" %FONT)
+    subprocess.call("fontmake -g sources/%s.glyphs -o variable > /dev/null 2>&1" %FONT, shell=True)
     print("     [+] Done")
 except:
     print("     [!] Error! Try installing Fontmake: https://github.com/googlei18n/fontmake")
 
-
 # MOVE FONTS
 print("\n**** Moving fonts to fonts directory")
-subprocess.call("cp variable_ttf/Orbitron-VF.ttf fonts/", shell=True)
+subprocess.call("cp variable_ttf/%s-VF.ttf fonts/" %FONT, shell=True)
 print("     [+] Done")
 
 
@@ -32,9 +33,9 @@ print("\n**** Run: ttfautohint")
 os.chdir('fonts')
 cwd = os.getcwd()
 print("     [+] In Directory:", cwd)
-subprocess.call("ttfautohint -I Orbitron-VF.ttf Orbitron-VF-Fix.ttf", shell=True)
-subprocess.call("cp Orbitron-VF-Fix.ttf Orbitron-VF.ttf", shell=True)
-subprocess.call("rm -rf Orbitron-VF-Fix.ttf", shell=True)
+subprocess.call("ttfautohint -I %s-VF.ttf %s-VF-Fix.ttf" %(FONT, FONT), shell=True)
+subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" %(FONT, FONT), shell=True)
+subprocess.call("rm -rf %s-VF-Fix.ttf" %FONT, shell=True)
 print("     [+] Done")
 
 
@@ -50,8 +51,8 @@ print("     [+] In Directory:", cwd)
 print("\n**** Run: edit xAvgCharWidth")
 cwd = os.getcwd()
 print("     [+] In Directory:", cwd)
-font = TTFont('fonts/Orbitron-VF.ttf')
-print("     [+] font =", font)
+#font = TTFont('fonts/$font-VF.ttf')
+print("     [+] font =", FONT)
 print("     [+] Done")
 
 # DRAWBOT
