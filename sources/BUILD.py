@@ -10,7 +10,8 @@ ROOT = "orbitron-vf"
 try:
     print("\n**** Running Fontmake")
     print("     [+] Run: fontmake -g sources/%s.glyphs -o variable" %FONT)
-    subprocess.call("fontmake -g sources/%s.glyphs -o variable > /dev/null 2>&1" %FONT, shell=True)
+    # subprocess.call("fontmake -g sources/%s.glyphs -o variable > /dev/null 2>&1" %FONT, shell=True)
+    subprocess.call("fontmake -g sources/%s.glyphs -o variable" %FONT, shell=True)
     print("     [+] Done")
 except:
     print("     [!] Error! Try installing Fontmake: https://github.com/googlei18n/fontmake")
@@ -23,7 +24,7 @@ print("     [+] Done")
 # CLEANUP
 print("\n**** Removing build directories")
 print("     [+] Run: rm -rf variable_ttf master_ufo")
-subprocess.call("rm -rf variable_ttf master_ufo", shell=True)
+subprocess.call("rm -rf variable_ttf master_ufo instance_ufo", shell=True)
 print("     [+] Done")
 
 # AUTOHINT
@@ -41,7 +42,7 @@ print("\n**** Run: gftools")
 os.chdir("..")
 cwd = os.getcwd()
 print("     [+] In Directory:", cwd)
-#subprocess.call("gftools fix-dsgi fonts/Foo-VF.ttf --autofix", shell=True)
+subprocess.call("gftools fix-dsig fonts/%s-Regular.ttf --autofix" %FONT, shell=True)
 
 # FONTTOOLS
 print("\n**** Run: edit xAvgCharWidth")
@@ -53,6 +54,6 @@ print("     [+] Done")
 
 # DRAWBOT
 print("\n**** Run: DrawBot")
-subprocess.call("python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True)
+#subprocess.call("python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True)
 print("     [+] Done")
 
