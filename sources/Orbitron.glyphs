@@ -1,5 +1,13 @@
 {
 .appVersion = "1176";
+DisplayStrings = (
+"/A.alt",
+"/A.alt",
+"/C.alt",
+$,
+AW,
+"ÁWAW "
+);
 copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron).";
 customParameters = (
 {
@@ -16447,7 +16455,7 @@ width = 636;
 unicode = 00A2;
 },
 {
-color = 0;
+color = 10;
 glyphname = dollar;
 layers = (
 {
@@ -16456,8 +16464,8 @@ paths = (
 {
 closed = 1;
 nodes = (
-"430 -135 LINE",
-"430 0 LINE",
+"439 -114 LINE",
+"439 0 LINE",
 "642 0 LINE SMOOTH",
 "692 0 OFFCURVE",
 "762 70 OFFCURVE",
@@ -16466,8 +16474,8 @@ nodes = (
 "762 330 OFFCURVE",
 "692 401 OFFCURVE",
 "642 401 QCURVE SMOOTH",
-"430 401 LINE",
-"430 639 LINE",
+"439 401 LINE",
+"439 639 LINE",
 "642 639 LINE SMOOTH",
 "658 639 OFFCURVE",
 "681 616 OFFCURVE",
@@ -16478,9 +16486,9 @@ nodes = (
 "762 650 OFFCURVE",
 "692 720 OFFCURVE",
 "642 720 QCURVE SMOOTH",
-"430 720 LINE",
-"430 831 LINE",
-"357 831 LINE",
+"439 720 LINE",
+"439 835 LINE",
+"357 835 LINE",
 "357 720 LINE",
 "154 720 LINE SMOOTH",
 "104 720 OFFCURVE",
@@ -16503,22 +16511,7 @@ nodes = (
 "104 0 OFFCURVE",
 "154 0 QCURVE SMOOTH",
 "357 0 LINE",
-"357 -135 LINE"
-);
-},
-{
-closed = 1;
-nodes = (
-"430 319 LINE",
-"642 319 LINE SMOOTH",
-"658 319 OFFCURVE",
-"681 297 OFFCURVE",
-"681 281 QCURVE SMOOTH",
-"681 120 LINE SMOOTH",
-"681 104 OFFCURVE",
-"658 81 OFFCURVE",
-"642 81 QCURVE SMOOTH",
-"430 81 LINE"
+"357 -114 LINE"
 );
 },
 {
@@ -16535,6 +16528,21 @@ nodes = (
 "357 401 LINE",
 "154 401 LINE SMOOTH"
 );
+},
+{
+closed = 1;
+nodes = (
+"439 319 LINE",
+"642 319 LINE SMOOTH",
+"658 319 OFFCURVE",
+"681 297 OFFCURVE",
+"681 281 QCURVE SMOOTH",
+"681 120 LINE SMOOTH",
+"681 104 OFFCURVE",
+"658 81 OFFCURVE",
+"642 81 QCURVE SMOOTH",
+"439 81 LINE"
+);
 }
 );
 width = 788;
@@ -16545,7 +16553,7 @@ paths = (
 {
 closed = 1;
 nodes = (
-"464 -135 LINE",
+"464 -98 LINE",
 "464 0 LINE",
 "592 0 LINE SMOOTH",
 "661 0 OFFCURVE",
@@ -16568,8 +16576,8 @@ nodes = (
 "671 720 OFFCURVE",
 "592 720 QCURVE SMOOTH",
 "464 720 LINE",
-"464 831 LINE",
-"311 831 LINE",
+"464 818 LINE",
+"311 818 LINE",
 "311 720 LINE",
 "182 720 LINE SMOOTH",
 "112 720 OFFCURVE",
@@ -16592,22 +16600,7 @@ nodes = (
 "102 0 OFFCURVE",
 "182 0 QCURVE SMOOTH",
 "311 0 LINE",
-"311 -135 LINE"
-);
-},
-{
-closed = 1;
-nodes = (
-"464 282 LINE",
-"554 282 LINE SMOOTH",
-"587 282 OFFCURVE",
-"587 282 OFFCURVE",
-"587 249 QCURVE SMOOTH",
-"587 189 LINE SMOOTH",
-"587 156 OFFCURVE",
-"587 156 OFFCURVE",
-"554 156 QCURVE SMOOTH",
-"464 156 LINE"
+"311 -98 LINE"
 );
 },
 {
@@ -16623,6 +16616,21 @@ nodes = (
 "311 564 LINE",
 "311 438 LINE",
 "220 438 LINE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"464 282 LINE",
+"554 282 LINE SMOOTH",
+"587 282 OFFCURVE",
+"587 282 OFFCURVE",
+"587 249 QCURVE SMOOTH",
+"587 189 LINE SMOOTH",
+"587 156 OFFCURVE",
+"587 156 OFFCURVE",
+"554 156 QCURVE SMOOTH",
+"464 156 LINE"
 );
 }
 );
@@ -20266,10 +20274,10 @@ n
 );
 }
 );
-interpolationWeight = 500;
+interpolationWeight = 450;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.8;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.2;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.9;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.1;
 };
 name = Medium;
 weightClass = Medium;
@@ -20290,10 +20298,10 @@ n
 );
 }
 );
-interpolationWeight = 700;
+interpolationWeight = 800;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.4;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.6;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.2;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.8;
 };
 isBold = 1;
 name = Bold;
