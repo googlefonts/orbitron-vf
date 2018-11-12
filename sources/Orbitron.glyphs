@@ -15,7 +15,7 @@ code = "A Aacute Acircumflex Adieresis Agrave Aring Atilde AE B C Ccedilla D E E
 name = Uppercase;
 }
 );
-copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron).";
+copyright = "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)";
 customParameters = (
 {
 name = license;
