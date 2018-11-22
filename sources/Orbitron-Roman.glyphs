@@ -1,9 +1,5 @@
 {
-.appVersion = "1176";
-DisplayStrings = (
-"/.notdef",
-"£"
-);
+.appVersion = "1179";
 classes = (
 {
 automatic = 1;
@@ -160,11 +156,11 @@ capHeight = 720;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 1011;
 },
 {
 name = typoDescender;
-value = -250;
+value = 243;
 },
 {
 name = typoLineGap;
@@ -180,11 +176,11 @@ value = 364;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 1011;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -243;
 },
 {
 name = hheaLineGap;
@@ -217,11 +213,11 @@ custom = Black;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 973;
 },
 {
 name = typoDescender;
-value = -250;
+value = 230;
 },
 {
 name = typoLineGap;
@@ -237,11 +233,11 @@ value = 268;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 973;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -230;
 },
 {
 name = hheaLineGap;
