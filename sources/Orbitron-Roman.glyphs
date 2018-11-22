@@ -156,11 +156,11 @@ capHeight = 720;
 customParameters = (
 {
 name = typoAscender;
-value = 1011;
+value = 973;
 },
 {
 name = typoDescender;
-value = 243;
+value = 230;
 },
 {
 name = typoLineGap;
@@ -176,11 +176,11 @@ value = 364;
 },
 {
 name = hheaAscender;
-value = 1011;
+value = 973;
 },
 {
 name = hheaDescender;
-value = -243;
+value = -230;
 },
 {
 name = hheaLineGap;
