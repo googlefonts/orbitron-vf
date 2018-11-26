@@ -3,7 +3,7 @@
 Fontbakery version: 0.5.2.dev76+g2b6adfed
 
 <details>
-<summary><b>[6] Orbitron-Roman-VF.ttf</b></summary>
+<summary><b>[4] Orbitron-Roman-VF.ttf</b></summary>
 <details>
 <summary>:fire: <b>FAIL:</b> METADATA.pb font.filename and font.post_script_name fields have equivalent values?</summary>
 
@@ -32,18 +32,13 @@ Fontbakery version: 0.5.2.dev76+g2b6adfed
 * :warning: **WARN** MS-FonVal: Characters are mapped in the Unicode Private Use area
 * :warning: **WARN** MS-FonVal: Duplicated knots DETAILS: Glyph index 232
 * :warning: **WARN** MS-FonVal: The unitsPerEm value is not a power of two DETAILS: 1000
+* :warning: **WARN** MS-FonVal: The modified time is an unlikely value DETAILS: modified = 3626098513 (Monday, November 26, 2018 5:35 PM)
 * :warning: **WARN** MS-FonVal: The lowestRecPPEM value may be unreasonably small DETAILS: lowestRecPPEM = 6
-* :warning: **WARN** MS-FonVal: Ascender is different than OS/2.usWinAscent. Different line heights on Windows and Apple DETAILS: hhea.Ascender = 750, OS/2.usWinAscent = 1054
-* :warning: **WARN** MS-FonVal: Descender is different than OS/2.usWinDescent. Different line heights on Windows and Apple DETAILS: hhea.Descender = -250, OS/2.usWinDescent = 364
-* :warning: **WARN** MS-FonVal: The LineGap value is less than the recommended value DETAILS: LineGap = 0, recommended = 418
+* :warning: **WARN** MS-FonVal: Ascender is different than OS/2.usWinAscent. Different line heights on Windows and Apple DETAILS: hhea.Ascender = 750, OS/2.usWinAscent = 1011
+* :warning: **WARN** MS-FonVal: Descender is different than OS/2.usWinDescent. Different line heights on Windows and Apple DETAILS: hhea.Descender = -250, OS/2.usWinDescent = 243
+* :warning: **WARN** MS-FonVal: The LineGap value is less than the recommended value DETAILS: LineGap = 0, recommended = 254
+* :warning: **WARN** MS-FonVal: Loca references a glyf entry which length is not a multiple of 4 DETAILS: Number of glyphs with the warning = 127
 * :warning: **WARN** MS-FonVal: maxSizeOfInstructions computation not via either approved method DETAILS: glyf maxSizeOfInstructions=199, prep size=178, fpgm size=3590, whereas maxp maxSizeOfInstruction is 3590
-
-</details>
-<details>
-<summary>:fire: <b>FAIL:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
-
-* [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
-* :fire: **FAIL** OS/2 xAvgCharWidth is 664 but it should be 675 which corresponds to the weighted average of the widths of the latin lowercase glyphs in the font
 
 </details>
 <details>
@@ -53,17 +48,6 @@ Fontbakery version: 0.5.2.dev76+g2b6adfed
 * :warning: **WARN** OS/2 VendorID value 'NONE' is not a known registered id. You should set it to your own 4 character code, and register that code with Microsoft at https://www.microsoft.com/typography/links/vendorlist.aspx [code: unknown]
 
 </details>
-<details>
-<summary>:warning: <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary>
-
-* [com.google.fonts/check/153](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/153)
-* :warning: **WARN** This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.
-
-The following glyphs do not have the recommended number of contours:
-
-Glyph name: uniE000	Contours detected: 0	Expected: 1
-
-</details>
 <br>
 </details>
 
@@ -71,8 +55,8 @@ Glyph name: uniE000	Contours detected: 0	Expected: 1
 
 | :broken_heart: ERROR | :fire: FAIL | :warning: WARN | :zzz: SKIP | :information_source: INFO | :bread: PASS |
 |:-----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 4 | 2 | 29 | 7 | 94 |
-| 0% | 3% | 1% | 21% | 5% | 69% |
+| 0 | 3 | 1 | 29 | 7 | 96 |
+| 0% | 2% | 1% | 21% | 5% | 71% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
