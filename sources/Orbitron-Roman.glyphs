@@ -225,11 +225,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 992;
+value = 1011;
 },
 {
 name = winDescent;
-value = 236;
+value = 243;
 },
 {
 name = hheaAscender;
@@ -20276,21 +20276,6 @@ unicode = 0000;
 },
 {
 color = 11;
-glyphname = uniE000;
-layers = (
-{
-layerId = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
-width = 600;
-},
-{
-layerId = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
-width = 0;
-}
-);
-unicode = E000;
-},
-{
-color = 11;
 glyphname = uniE002;
 layers = (
 {
@@ -20982,6 +20967,22 @@ width = 774;
 }
 );
 unicode = E00C;
+},
+{
+color = 11;
+export = 0;
+glyphname = uniE000;
+layers = (
+{
+layerId = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
+width = 600;
+},
+{
+layerId = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
+width = 0;
+}
+);
+unicode = E000;
 }
 );
 instances = (
