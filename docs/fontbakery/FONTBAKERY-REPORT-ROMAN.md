@@ -32,7 +32,6 @@ Fontbakery version: 0.5.2.dev76+g2b6adfed
 * :warning: **WARN** MS-FonVal: Characters are mapped in the Unicode Private Use area
 * :warning: **WARN** MS-FonVal: Duplicated knots DETAILS: Glyph index 232
 * :warning: **WARN** MS-FonVal: The unitsPerEm value is not a power of two DETAILS: 1000
-* :warning: **WARN** MS-FonVal: The modified time is an unlikely value DETAILS: modified = 3626098513 (Monday, November 26, 2018 5:35 PM)
 * :warning: **WARN** MS-FonVal: The lowestRecPPEM value may be unreasonably small DETAILS: lowestRecPPEM = 6
 * :warning: **WARN** MS-FonVal: Ascender is different than OS/2.usWinAscent. Different line heights on Windows and Apple DETAILS: hhea.Ascender = 750, OS/2.usWinAscent = 1011
 * :warning: **WARN** MS-FonVal: Descender is different than OS/2.usWinDescent. Different line heights on Windows and Apple DETAILS: hhea.Descender = -250, OS/2.usWinDescent = 243
