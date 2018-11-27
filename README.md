@@ -22,12 +22,12 @@ To view the copyright and specific terms and conditions please refer to [OFL.txt
 ## Downloading Font Files (TTF)
 Find binary releases on <https://github.com/theleagueof/orbitron/releases>
 
-# Installation Instructions
+## Installation Instructions
 - [GNU+Linux](https://wiki.archlinux.org/index.php/fonts#Manual_installation)
 - [MacOS](https://support.apple.com/en-us/HT201749)
 - [Windows](https://support.microsoft.com/en-us/help/314960/how-to-install-or-remove-a-font-in-windows)
 
-# Getting Involved
+## Getting Involved
 Would you like to contribute to the development of this font? Here is how **you** can help:
 
 1. Tell us about any bugs you find, or enhancements you would like to see on the issue tracker: [https://github.com/theleagueof/orbitron/issues](https://github.com/theleagueof/orbitron/issues)
