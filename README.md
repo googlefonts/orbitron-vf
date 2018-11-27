@@ -1,8 +1,8 @@
 
 ![Orbitron](https://github.com/theleagueof/orbitron/raw/master/images/orbitron-1.jpeg)
 
-Orbitron
-========
+# Orbitron
+
 _by [Matt McInerney](http://pixelspread.com)_
 
 Orbitron is a geometric sans-serif typeface intended for display purposes. It features four weights (light, medium, bold, and black), stylistic alternatives, small caps, and a ton of alternate glyphs. 
@@ -12,23 +12,22 @@ Orbitron was designed so that graphic designers in the future will have some alt
 <!-- Updated image from variable mastering fork -->
 ![Orbitron](https://github.com/eliheuer/orbitron/raw/vf-mastering/docs/images/animated-specimen.gif)
 
-# License
+## Building From Source
+To build the fonts and update the specimens, run `python sources/BUILD.py` from the root directory of this repo. A few dependancies are requiered for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
 
+## License
 Orbitron is licensed under the SIL Open Font License v1.1 (<http://scripts.sil.org/OFL>). 
 To view the copyright and specific terms and conditions please refer to [OFL.txt](https://github.com/theleagueof/orbitron/blob/master/OFL.txt)
 
-# Downloading Font Files (TTF)
-
+## Downloading Font Files (TTF)
 Find binary releases on <https://github.com/theleagueof/orbitron/releases>
 
 # Installation Instructions
-
 - [GNU+Linux](https://wiki.archlinux.org/index.php/fonts#Manual_installation)
 - [MacOS](https://support.apple.com/en-us/HT201749)
 - [Windows](https://support.microsoft.com/en-us/help/314960/how-to-install-or-remove-a-font-in-windows)
 
 # Getting Involved
-
 Would you like to contribute to the development of this font? Here is how **you** can help:
 
 1. Tell us about any bugs you find, or enhancements you would like to see on the issue tracker: [https://github.com/theleagueof/orbitron/issues](https://github.com/theleagueof/orbitron/issues)
