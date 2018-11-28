@@ -1,5 +1,12 @@
 {
 .appVersion = "1181";
+DisplayStrings = (
+$,
+t,
+H,
+h,
+a
+);
 classes = (
 {
 automatic = 1;
@@ -156,11 +163,11 @@ capHeight = 720;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 1011;
 },
 {
 name = typoDescender;
-value = -250;
+value = -243;
 },
 {
 name = typoLineGap;
@@ -176,11 +183,11 @@ value = 243;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 1011;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -243;
 },
 {
 name = hheaLineGap;
@@ -197,11 +204,17 @@ Location = 400;
 }
 );
 descender = -250;
+horizontalStems = (
+82
+);
 iconName = Light;
 id = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
 userData = {
 GSCornerRadius = 15;
 };
+verticalStems = (
+82
+);
 weightValue = 400;
 widthValue = 5;
 xHeight = 580;
@@ -213,11 +226,11 @@ custom = Black;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 1011;
 },
 {
 name = typoDescender;
-value = -250;
+value = -243;
 },
 {
 name = typoLineGap;
@@ -233,11 +246,11 @@ value = 243;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 1011;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -243;
 },
 {
 name = hheaLineGap;
@@ -254,12 +267,17 @@ Location = 900;
 }
 );
 descender = -250;
+horizontalStems = (
+156
+);
 iconName = Bold;
 id = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
 userData = {
 GSCornerRadius = 32;
 };
-visible = 1;
+verticalStems = (
+156
+);
 weightValue = 900;
 widthValue = 5;
 xHeight = 580;
