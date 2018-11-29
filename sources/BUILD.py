@@ -4,10 +4,8 @@ import glob
 import subprocess
 from fontTools.ttLib import TTFont
 
-
 sources = []
 sources_styles = []
- 
 
 def check_root_dir():
     """
@@ -74,7 +72,7 @@ def ttfautohint():
     cwd = os.getcwd()
     print("     [+] In Directory:", cwd)
     for source in sources:
-        subprocess.call("ttfautohint -c -I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn %s-VF.ttf %s-VF-Fix.ttf" %(source, source), shell=True)
+        subprocess.call("ttfautohint -I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn %s-VF.ttf %s-VF-Fix.ttf" %(source, source), shell=True)
         subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" %(source, source), shell=True)
         subprocess.call("rm -rf %s-VF-Fix.ttf" %source, shell=True)
         print("     [+] Done:", source)
