@@ -17,6 +17,9 @@ parser.add_argument(
 parser.add_argument(
     "--fontbakery", help="Test fonts with fontbakery", action="store_true"
 )
+parser.add_argument(
+    "--gfdir", help = "Store GoogleFonts directory name"
+)
 args = parser.parse_args()
 
 
@@ -25,27 +28,35 @@ sources = []
 sources_styles = []
 
 
+def intro():
+    """
+    Gives basic script info.
+    """
+    print("#    # #####                    #####    ################")
+    time.sleep(0.1)
+    print("#    # #                        #   #    #   ##         #")
+    time.sleep(0.1)
+    print(" #  #  ####                      #   #  #   # #   #######")
+    time.sleep(0.1)
+    print(" #  #  #     <---------------->  #    ##    # #      #")
+    time.sleep(0.1)
+    print("  ##   #                          #        #  #   ####")
+    time.sleep(0.1)
+    print("  ##   #                          ##########  #####")
+    time.sleep(0.1)
+    print("\n**** Starting build script:", time.ctime())
+    time.sleep(0.1)
+
 def display_args():
     """
     Gives info about the args.
     """
     print("\n**** Settings:")
-    print("     [+] Drawbot specimen rendering (--drawbot)\t", args.drawbot)
-    print("     [+] Output to Google Fonts (--googlefonts)\t", args.googlefonts)
+    print("     [+] Drawbot specimen rendering (--drawbot)\t\t", args.drawbot)
+    print("     [+] Output to Google Fonts (--googlefonts)\t\t", args.googlefonts)
     print("     [+] Test output with fontbakery (--fontbakery)\t", args.fontbakery)
-
-
-def google_fonts():
-    """
-    Copy font output to the Google Fonts repo.
-    """
-    print("\n****  Copying font output to the Google Fonts repo.")
-    for name in glob.glob("fonts/*.ttf"):
-        subprocess.call(
-            "cp fonts/*-VF.ttf"
-            % (source, source),
-            shell=True,
-        )
+    print("     [+] User set GoogleFonts directory:\t\t", args.gfdir)
+    time.sleep(1)
 
 
 def check_root_dir():
@@ -64,6 +75,7 @@ def check_root_dir():
         print(
             "     [!] ERROR: Please run this script from the root directory of a git repo."
         )
+    time.sleep(1)
 
 
 def get_source_list():
@@ -76,6 +88,7 @@ def get_source_list():
         sources.append(os.path.splitext(name)[0])
     os.chdir("..")
     print("     [+] SOURCES: List of sources =", sources)
+    time.sleep(1)
 
 
 def get_style_list():
@@ -90,6 +103,7 @@ def get_style_list():
         sources_style = str(source.rpartition("-")[2])
         sources_styles.append(sources_style)
     print("     [+] SOURCES: Styles =", sources_styles)
+    time.sleep(1)
 
 
 def run_fontmake():
@@ -118,6 +132,7 @@ def rm_build_dirs():
     print("     [+] Run: rm -rf variable_ttf master_ufo instance_ufo")
     subprocess.call("rm -rf variable_ttf master_ufo instance_ufo", shell=True)
     print("     [+] Done")
+    time.sleep(1)
 
 
 def ttfautohint():
@@ -147,6 +162,7 @@ def ttfautohint():
         print("     [+] In Directory:", cwd)
         print("     [+] Done:", source)
     print("     [+] Done")
+    time.sleep(1)
 
 
 def fix_dsig():
@@ -154,9 +170,6 @@ def fix_dsig():
     Fixes DSIG table
     """
     print("\n**** Run: gftools")
-    os.chdir("..")
-    cwd = os.getcwd()
-    print("     [+] In Directory:", cwd)
     for source in sources:
         subprocess.call(
             "gftools fix-dsig fonts/%s-VF.ttf --autofix > /dev/null 2>&1" % source,
@@ -164,6 +177,22 @@ def fix_dsig():
         )
         print("     [+] Done:", source)
     print("     [+] Done")
+    time.sleep(1)
+
+
+def google_fonts():
+    """
+    Copy font output to the Google Fonts repo.
+    """
+    print("\n****  Copying font output to the Google Fonts repo.")
+    for source in sources:
+        subprocess.call(
+            "cp fonts/%s-VF.ttf ~/Google/fonts/ofl/%s/" % (source, args.gfdir),
+            shell=True,
+        )
+        print("     [+] Done:", source)
+    print("     [+] Done")
+    time.sleep(1)
 
 
 def render_specimens():
@@ -175,9 +204,11 @@ def render_specimens():
         "python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True
     )
     print("     [+] Done")
+    time.sleep(1)
 
 
 if __name__ == "__main__":
+    intro()
     display_args()
     check_root_dir()
     get_source_list()
@@ -188,6 +219,10 @@ if __name__ == "__main__":
     fix_dsig()
     if args.drawbot == True:
         render_specimens()
+    else:
+        pass
+    if args.googlefonts == True:
+        google_fonts()
     else:
         pass
     quit()
