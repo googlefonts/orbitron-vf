@@ -1,35 +1,82 @@
-import os
-import time
+import argparse
 import glob
+import os
 import subprocess
+import time
 from fontTools.ttLib import TTFont
 
+
+# Initialize flag parser
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--drawbot", help="Render a specimen with DrawBot", action="store_true"
+)
+parser.add_argument(
+    "--googlefonts", help="Copy output to Google Fonts", action="store_true"
+)
+parser.add_argument(
+    "--fontbakery", help="Test fonts with fontbakery", action="store_true"
+)
+args = parser.parse_args()
+
+
+# Initialize empty lists
 sources = []
 sources_styles = []
+
+
+def display_args():
+    """
+    Gives info about the args.
+    """
+    print("\n**** Settings:")
+    print("     [+] Drawbot specimen rendering (--drawbot)\t", args.drawbot)
+    print("     [+] Output to Google Fonts (--googlefonts)\t", args.googlefonts)
+    print("     [+] Test output with fontbakery (--fontbakery)\t", args.fontbakery)
+
+
+def google_fonts():
+    """
+    Copy font output to the Google Fonts repo.
+    """
+    print("\n****  Copying font output to the Google Fonts repo.")
+    for name in glob.glob("fonts/*.ttf"):
+        subprocess.call(
+            "cp fonts/*-VF.ttf"
+            % (source, source),
+            shell=True,
+        )
+
 
 def check_root_dir():
     """
     Checks to make sure script is run from a git repo root directory.
     """
-    print("\n**** Checking to make sure the build script is working in the font repo root directory:")
-    REPO_ROOT = ['.gitignore', '.git']
-    repo_test = os.listdir(path='.')
-    repo_test_result =  all(elem in repo_test for elem in REPO_ROOT)
+    print(
+        "\n**** Checking to make sure the build script is working in the font repo root directory:"
+    )
+    REPO_ROOT = [".gitignore", ".git"]
+    repo_test = os.listdir(path=".")
+    repo_test_result = all(elem in repo_test for elem in REPO_ROOT)
     if repo_test_result:
         print("     [+] OK: Looks good")
     else:
-        print("     [!] ERROR: Please run this script from the root directory of a git repo.")
+        print(
+            "     [!] ERROR: Please run this script from the root directory of a git repo."
+        )
+
 
 def get_source_list():
     """
     Gets a list of source files.
     """
     print("\n**** Making a list of Glyphsapp source files:")
-    os.chdir('sources')
-    for name in glob.glob('*.glyphs'):
+    os.chdir("sources")
+    for name in glob.glob("*.glyphs"):
         sources.append(os.path.splitext(name)[0])
-    os.chdir('..')
+    os.chdir("..")
     print("     [+] SOURCES: List of sources =", sources)
+
 
 def get_style_list():
     """
@@ -39,20 +86,29 @@ def get_style_list():
     for source in sources:
         time.sleep(0.5)
         print("     [+] SOURCES: Preparing to build", source)
-        print("     [+] SOURCES: Style =", source.rpartition('-')[2])
-        sources_style = str(source.rpartition('-')[2])
+        print("     [+] SOURCES: Style =", source.rpartition("-")[2])
+        sources_style = str(source.rpartition("-")[2])
         sources_styles.append(sources_style)
     print("     [+] SOURCES: Styles =", sources_styles)
+
 
 def run_fontmake():
     """
     Builds ttf fonts files with font make.
     """
     for source in sources:
-        print("\n**** Building %s font files with Fontmake:" %source)
-        print("     [+] Run: fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf" %(source, source) )
-        subprocess.call("fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf > /dev/null 2>&1" %(source, source), shell=True)
+        print("\n**** Building %s font files with Fontmake:" % source)
+        print(
+            "     [+] Run: fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf"
+            % (source, source)
+        )
+        subprocess.call(
+            "fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf > /dev/null 2>&1"
+            % (source, source),
+            shell=True,
+        )
         print("     [!] Done")
+
 
 def rm_build_dirs():
     """
@@ -63,20 +119,35 @@ def rm_build_dirs():
     subprocess.call("rm -rf variable_ttf master_ufo instance_ufo", shell=True)
     print("     [+] Done")
 
+
 def ttfautohint():
     """
-    Runs ttfautohint
+    Runs ttfautohint with various flags set. For more info run: ttfautohint --help
     """
     print("\n**** Run: ttfautohint")
-    os.chdir('fonts')
+    os.chdir("fonts")
     cwd = os.getcwd()
     print("     [+] In Directory:", cwd)
     for source in sources:
-        subprocess.call("ttfautohint -I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn %s-VF.ttf %s-VF-Fix.ttf" %(source, source), shell=True)
-        subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" %(source, source), shell=True)
-        subprocess.call("rm -rf %s-VF-Fix.ttf" %source, shell=True)
+        subprocess.call(
+            "ttfautohint \
+                         -I \
+                         -W \
+                         --increase-x-height=0 \
+                         --stem-width-mode=sss \
+                         --default-script=latn \
+                         %s-VF.ttf %s-VF-Fix.ttf"
+            % (source, source),
+            shell=True,
+        )
+        subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" % (source, source), shell=True)
+        subprocess.call("rm -rf %s-VF-Fix.ttf" % source, shell=True)
+        os.chdir("..")
+        cwd = os.getcwd()
+        print("     [+] In Directory:", cwd)
         print("     [+] Done:", source)
     print("     [+] Done")
+
 
 def fix_dsig():
     """
@@ -87,19 +158,27 @@ def fix_dsig():
     cwd = os.getcwd()
     print("     [+] In Directory:", cwd)
     for source in sources:
-        subprocess.call("gftools fix-dsig fonts/%s-VF.ttf --autofix > /dev/null 2>&1" %source, shell=True)
+        subprocess.call(
+            "gftools fix-dsig fonts/%s-VF.ttf --autofix > /dev/null 2>&1" % source,
+            shell=True,
+        )
         print("     [+] Done:", source)
     print("     [+] Done")
+
 
 def render_specimens():
     """
     Render specimens
     """
     print("\n**** Run: DrawBot")
-    subprocess.call("python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True)
+    subprocess.call(
+        "python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True
+    )
     print("     [+] Done")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
+    display_args()
     check_root_dir()
     get_source_list()
     get_style_list()
@@ -107,5 +186,8 @@ if __name__ == '__main__':
     rm_build_dirs()
     ttfautohint()
     fix_dsig()
-#    render_specimens()
+    if args.drawbot == True:
+        render_specimens()
+    else:
+        pass
     quit()
