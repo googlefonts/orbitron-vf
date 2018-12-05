@@ -9,16 +9,15 @@ from fontTools.ttLib import TTFont
 # Initialize flag parser
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "--drawbot", help="Render a specimen with DrawBot", action="store_true"
-)
-parser.add_argument(
-    "--googlefonts", help="Copy output to Google Fonts", action="store_true"
+    "--drawbot",
+    help="Render a specimen with DrawBot",
+    action="store_true"
 )
 parser.add_argument(
     "--fontbakery", help="Test fonts with fontbakery", action="store_true"
 )
 parser.add_argument(
-    "--gfdir", help = "Store GoogleFonts directory name"
+    "--googlefonts", help = "Store GoogleFonts directory name"
 )
 args = parser.parse_args()
 
@@ -27,36 +26,44 @@ args = parser.parse_args()
 sources = []
 sources_styles = []
 
+# Color printing setup
+def printR(prt): print("\033[91m {}\033[00m" .format(prt))
+def printG(prt): print("\033[92m {}\033[00m" .format(prt))
+def printY(prt): print("\033[93m {}\033[00m" .format(prt))
 
 def intro():
-    """
+    """ 
     Gives basic script info.
     """
-    print("#    # #####                    #####    ################")
+    printG("#    # #####                    #####    ################")
     time.sleep(0.1)
-    print("#    # #                        #   #    #   ##         #")
+    printG("#    # #                        #   #    #   ##         #")
     time.sleep(0.1)
-    print(" #  #  ####                      #   #  #   # #   #######")
+    printG(" #  #  ####                      #   #  #   # #   #######")
     time.sleep(0.1)
-    print(" #  #  #     <---------------->  #    ##    # #      #")
+    printG(" #  #  #     <---------------->  #    ##    # #      #")
     time.sleep(0.1)
-    print("  ##   #                          #        #  #   ####")
+    printG("  ##   #                          #        #  #   ####")
     time.sleep(0.1)
-    print("  ##   #                          ##########  #####")
+    printG("  ##   #                          ##########  #####")
     time.sleep(0.1)
-    print("\n**** Starting build script:", time.ctime())
+    printY("\n**** Starting variable font build script:")
+    print("    [+]", time.ctime())
     time.sleep(0.1)
+
 
 def display_args():
     """
-    Gives info about the args.
+    Gives info about the flags.
     """
     print("\n**** Settings:")
-    print("     [+] Drawbot specimen rendering (--drawbot)\t\t", args.drawbot)
-    print("     [+] Output to Google Fonts (--googlefonts)\t\t", args.googlefonts)
-    print("     [+] Test output with fontbakery (--fontbakery)\t", args.fontbakery)
-    print("     [+] User set GoogleFonts directory:\t\t", args.gfdir)
-    time.sleep(1)
+    time.sleep(0.1)
+    print("     [+] --drawbot\t", args.drawbot)
+    time.sleep(0.1)
+    print("     [+] --googlefonts\t", args.googlefonts)
+    time.sleep(0.1)
+    print("     [+] --fontbakery\t", args.fontbakery)
+    time.sleep(0.1)
 
 
 def check_root_dir():
@@ -64,7 +71,7 @@ def check_root_dir():
     Checks to make sure script is run from a git repo root directory.
     """
     print(
-        "\n**** Checking to make sure the build script is working in the font repo root directory:"
+        "\n**** Looking for the font repo root directory:"
     )
     REPO_ROOT = [".gitignore", ".git"]
     repo_test = os.listdir(path=".")
@@ -112,12 +119,13 @@ def run_fontmake():
     """
     for source in sources:
         print("\n**** Building %s font files with Fontmake:" % source)
-        print(
-            "     [+] Run: fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf"
-            % (source, source)
-        )
+        print("     [+] Run: fontmake ")
         subprocess.call(
-            "fontmake -g sources/%s.glyphs -o variable --output-path fonts/%s-VF.ttf > /dev/null 2>&1"
+            "fontmake \
+                      -g sources/%s.glyphs \
+                      -o variable \
+                      --output-path fonts/%s-VF.ttf \
+            > /dev/null 2>&1"
             % (source, source),
             shell=True,
         )
@@ -182,9 +190,27 @@ def fix_dsig():
 
 def google_fonts():
     """
-    Copy font output to the Google Fonts repo.
+    Copy font output to the GoogleFonts repo.
     """
-    print("\n****  Copying font output to the Google Fonts repo.")
+    print("\n**** Copying font output to the GoogleFonts repo.")
+    if args.googlefonts is not None:
+        for source in sources:
+            subprocess.call(
+                "cp fonts/%s-VF.ttf %s/" % (source, args.googlefonts),
+                shell=True,
+            )
+            print("     [+] Done:", source)
+    else:
+        pass
+    print("     [+] Done")
+    time.sleep(1)
+
+
+def fontbakery():
+    """
+    Run FontBakery on the GoogleFonts repo.
+    """
+    print("\n**** Run: FontBakery on .")
     for source in sources:
         subprocess.call(
             "cp fonts/%s-VF.ttf ~/Google/fonts/ofl/%s/" % (source, args.gfdir),
@@ -194,7 +220,7 @@ def google_fonts():
     print("     [+] Done")
     time.sleep(1)
 
-
+    
 def render_specimens():
     """
     Render specimens
@@ -206,8 +232,10 @@ def render_specimens():
     print("     [+] Done")
     time.sleep(1)
 
-
-if __name__ == "__main__":
+def build_vf():
+    """
+    Executes variable font build sequence
+    """
     intro()
     display_args()
     check_root_dir()
@@ -217,12 +245,24 @@ if __name__ == "__main__":
     rm_build_dirs()
     ttfautohint()
     fix_dsig()
+    # Drawbot
     if args.drawbot == True:
         render_specimens()
     else:
         pass
-    if args.googlefonts == True:
+    # GoogleFonts
+    if args.googlefonts is not None:
         google_fonts()
     else:
         pass
+    # FontBakery
+    if args.fontbakery == True:
+#        fontbakery()
+        pass
+    else:
+        pass
     quit()
+
+
+if __name__ == "__main__":
+    build_vf()
