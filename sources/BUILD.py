@@ -1,3 +1,22 @@
+#!/usr/bin/env python3
+# Copyright 2018 The Google Font Tools Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# See AUTHORS.txt for the list of Authors and LICENSE.txt for the License.
+"""
+Builds variable fonts using flags for input.
+"""
 import argparse
 import glob
 import os
@@ -44,7 +63,7 @@ def printG(prt):
 
 def printY(prt):
     """
-    Print in red
+    Print in yellow
     """
     print("\033[93m {}\033[00m".format(prt))
 
@@ -258,7 +277,7 @@ def render_specimens():
     time.sleep(1)
 
 
-def build_vf():
+def main():
     """
     Executes variable font build sequence
     """
@@ -293,5 +312,4 @@ def build_vf():
 
 
 if __name__ == "__main__":
-    build_vf()
-    quit()
+    main()
