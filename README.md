@@ -9,23 +9,24 @@ Orbitron is a geometric sans-serif typeface intended for display purposes. It fe
 
 Orbitron was designed so that graphic designers in the future will have some alternative to typefaces like Eurostile or Bank Gothic. If you’ve ever seen a futuristic sci-fi movie, you have may noticed that all other fonts have been lost or destroyed in the apocalypse that led humans to flee earth. Only those very few geometric typefaces have survived to be used on spaceship exteriors, space station signage, monopolistic corporate branding, uniforms featuring aerodynamic shoulder pads, etc. Of course Orbitron could also be used on the posters for the movies portraying this inevitable future.
 
+## Variable Font Specimen 
 <!-- Updated image from variable mastering fork -->
 ![Orbitron](https://github.com/eliheuer/orbitron/raw/vf-mastering/docs/images/animated-specimen.gif)
 
 ## Building From Source
-Note: A few dependancies are requiered for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
+Note: A few dependencies are required for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
 
-To build the fonts; clone this repo, then navigate to it's root directory in a terminal and run:
+To build the fonts; clone this repo, then navigate to its root directory in a terminal and run:
 ```
 py sources/BUILD.py --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn"
 ```
 This will build new fonts in the `fonts` directory and apply autohinting.
 
-To additional options are avilable by adding flags to the build script, for example if you wanted to update the drawbot specimen, prepare the font for a PR to Google Fonts and test with FontBakery, we could run:
+Additional options are available by adding flags to the build script, for example, if you wanted to update the DrawBot specimen, prepare the font for a PR to Google Fonts and test with FontBakery, we could run:
 ```
 py sources/BUILD.py --googlefonts ~/Google/fonts/ofl/orbitron --fontbakery --drawbot --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn"
 ```
-For additional help, run:
+For more help, run:
 ```
 py sources/BUILD.py --help
 ```
