@@ -13,7 +13,22 @@ Orbitron was designed so that graphic designers in the future will have some alt
 ![Orbitron](https://github.com/eliheuer/orbitron/raw/vf-mastering/docs/images/animated-specimen.gif)
 
 ## Building From Source
-To build the fonts and update the specimens, run `python sources/BUILD.py` from the root directory of this repo. A few dependancies are requiered for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
+Note: A few dependancies are requiered for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
+
+To build the fonts; clone this repo, then navigate to it's root directory in a terminal and run:
+```
+py sources/BUILD.py --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn"
+```
+This will build new fonts in the `fonts` directory and apply autohinting.
+
+To additional options are avilable by adding flags to the build script, for example if you wanted to update the drawbot specimen, prepare the font for a PR to Google Fonts and test with FontBakery, we could run:
+```
+py sources/BUILD.py --googlefonts ~/Google/fonts/ofl/orbitron --fontbakery --drawbot --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn"
+```
+For additional help, run:
+```
+py sources/BUILD.py --help
+```
 
 ## License
 Orbitron is licensed under the SIL Open Font License v1.1 (<http://scripts.sil.org/OFL>). 
