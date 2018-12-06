@@ -14,10 +14,13 @@ parser.add_argument(
     action="store_true"
 )
 parser.add_argument(
-    "--fontbakery", help="Test fonts with fontbakery", action="store_true"
+    "--fontbakery",
+    help="Test fonts with fontbakery",
+    action="store_true"
 )
 parser.add_argument(
-    "--googlefonts", help = "Store GoogleFonts directory name"
+    "--googlefonts",
+    help = "Store GoogleFonts directory name"
 )
 args = parser.parse_args()
 
@@ -26,10 +29,12 @@ args = parser.parse_args()
 sources = []
 sources_styles = []
 
+
 # Color printing setup
 def printR(prt): print("\033[91m {}\033[00m" .format(prt))
 def printG(prt): print("\033[92m {}\033[00m" .format(prt))
 def printY(prt): print("\033[93m {}\033[00m" .format(prt))
+
 
 def intro():
     """ 
@@ -47,8 +52,9 @@ def intro():
     time.sleep(0.1)
     printG("  ##   #                          ##########  #####")
     time.sleep(0.1)
-    printY("\n**** Starting variable font build script:")
-    print("    [+]", time.ctime())
+    print("\n**** Starting variable font build script:")
+    print("     [+]", time.ctime())
+    printG("    [!] Done")
     time.sleep(0.1)
 
 
@@ -64,24 +70,22 @@ def display_args():
     time.sleep(0.1)
     print("     [+] --fontbakery\t", args.fontbakery)
     time.sleep(0.1)
+    printG("    [!] Done")
 
 
 def check_root_dir():
     """
     Checks to make sure script is run from a git repo root directory.
     """
-    print(
-        "\n**** Looking for the font repo root directory:"
-    )
+    print("\n**** Looking for the font repo root directory:")
     REPO_ROOT = [".gitignore", ".git"]
     repo_test = os.listdir(path=".")
     repo_test_result = all(elem in repo_test for elem in REPO_ROOT)
     if repo_test_result:
         print("     [+] OK: Looks good")
+        printG("    [!] Done")
     else:
-        print(
-            "     [!] ERROR: Please run this script from the root directory of a git repo."
-        )
+        printR("     [!] ERROR: Run script from the root directory")
     time.sleep(1)
 
 
@@ -96,13 +100,14 @@ def get_source_list():
     os.chdir("..")
     print("     [+] SOURCES: List of sources =", sources)
     time.sleep(1)
+    printG("    [!] Done")
 
 
 def get_style_list():
     """
     Gets a list of styles from the source list.
     """
-    print("\n**** Starting FAFR (Fully Automated Font Repository) build process:")
+    print("\n**** Starting build process:")
     for source in sources:
         time.sleep(0.5)
         print("     [+] SOURCES: Preparing to build", source)
@@ -111,6 +116,7 @@ def get_style_list():
         sources_styles.append(sources_style)
     print("     [+] SOURCES: Styles =", sources_styles)
     time.sleep(1)
+    printG("    [!] Done")
 
 
 def run_fontmake():
@@ -130,6 +136,7 @@ def run_fontmake():
             shell=True,
         )
         print("     [!] Done")
+    printG("    [!] Done")
 
 
 def rm_build_dirs():
@@ -139,7 +146,7 @@ def rm_build_dirs():
     print("\n**** Removing build directories")
     print("     [+] Run: rm -rf variable_ttf master_ufo instance_ufo")
     subprocess.call("rm -rf variable_ttf master_ufo instance_ufo", shell=True)
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
 
@@ -169,7 +176,7 @@ def ttfautohint():
         cwd = os.getcwd()
         print("     [+] In Directory:", cwd)
         print("     [+] Done:", source)
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
 
@@ -184,7 +191,7 @@ def fix_dsig():
             shell=True,
         )
         print("     [+] Done:", source)
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
 
@@ -202,7 +209,7 @@ def google_fonts():
             print("     [+] Done:", source)
     else:
         pass
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
 
@@ -217,10 +224,10 @@ def fontbakery():
             shell=True,
         )
         print("     [+] Done:", source)
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
-    
+
 def render_specimens():
     """
     Render specimens
@@ -229,7 +236,7 @@ def render_specimens():
     subprocess.call(
         "python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True
     )
-    print("     [+] Done")
+    printG("    [!] Done")
     time.sleep(1)
 
 def build_vf():
