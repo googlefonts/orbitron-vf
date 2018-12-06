@@ -15,7 +15,7 @@ Open a UNIX terminal and run `pip install -r requierments.txt`, or install each 
 Once requierments are installed, run the following command from the root directory of this repo:
 
 ```
-python3 sources/BUILD.py
+python3 sources/BUILD.py --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss"
 ```
 
 ### Building fonts and updating specimens
@@ -23,3 +23,8 @@ python3 sources/BUILD.py
 When building the fonts, the specimen can also be updated with any new changes to the fonts. Just install the above dependencies, plus `drawbot`:
 
  - [drawbot](http://drawbot.com)
+ 
+ Then, use the flag:
+```
+python3 sources/BUILD.py --drawbot
+```
