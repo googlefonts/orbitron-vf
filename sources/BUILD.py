@@ -9,18 +9,16 @@ from fontTools.ttLib import TTFont
 # Initialize flag parser
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "--drawbot",
-    help="Render a specimen with DrawBot",
-    action="store_true"
+    "--drawbot", help="Render a specimen with DrawBot", action="store_true"
 )
 parser.add_argument(
-    "--fontbakery",
-    help="Test fonts with fontbakery",
-    action="store_true"
+    "--fontbakery", help="Test fonts with fontbakery", action="store_true"
 )
 parser.add_argument(
-    "--googlefonts",
-    help = "Store GoogleFonts directory name"
+    "--googlefonts", help="Store GoogleFonts directory name"
+)
+parser.add_argument(
+    "--ttfautohint", help="Store ttfautohint flags"
 )
 args = parser.parse_args()
 
@@ -30,10 +28,25 @@ sources = []
 sources_styles = []
 
 
-# Color printing setup
-def printR(prt): print("\033[91m {}\033[00m" .format(prt))
-def printG(prt): print("\033[92m {}\033[00m" .format(prt))
-def printY(prt): print("\033[93m {}\033[00m" .format(prt))
+def printR(prt):
+    """
+    Print in red
+    """
+    print("\033[91m {}\033[00m".format(prt))
+
+
+def printG(prt):
+    """
+    Print in green
+    """
+    print("\033[92m {}\033[00m".format(prt))
+
+
+def printY(prt):
+    """
+    Print in red
+    """
+    print("\033[93m {}\033[00m".format(prt))
 
 
 def intro():
@@ -67,6 +80,8 @@ def display_args():
     print("     [+] --drawbot\t", args.drawbot)
     time.sleep(0.1)
     print("     [+] --googlefonts\t", args.googlefonts)
+    time.sleep(0.1)
+    print("     [+] --ttfautohint\t", args.ttfautohint)
     time.sleep(0.1)
     print("     [+] --fontbakery\t", args.fontbakery)
     time.sleep(0.1)
@@ -161,13 +176,9 @@ def ttfautohint():
     for source in sources:
         subprocess.call(
             "ttfautohint \
-                         -I \
-                         -W \
-                         --increase-x-height=0 \
-                         --stem-width-mode=sss \
-                         --default-script=latn \
+                         %s \
                          %s-VF.ttf %s-VF-Fix.ttf"
-            % (source, source),
+            % (args.ttfautohint, source, source),
             shell=True,
         )
         subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" % (source, source), shell=True)
@@ -187,7 +198,10 @@ def fix_dsig():
     print("\n**** Run: gftools")
     for source in sources:
         subprocess.call(
-            "gftools fix-dsig fonts/%s-VF.ttf --autofix > /dev/null 2>&1" % source,
+            "gftools \
+                     fix-dsig fonts/%s-VF.ttf --autofix \
+                     > /dev/null 2>&1"
+            % source,
             shell=True,
         )
         print("     [+] Done:", source)
@@ -203,8 +217,7 @@ def google_fonts():
     if args.googlefonts is not None:
         for source in sources:
             subprocess.call(
-                "cp fonts/%s-VF.ttf %s/" % (source, args.googlefonts),
-                shell=True,
+                "cp fonts/%s-VF.ttf %s/" % (source, args.googlefonts), shell=True
             )
             print("     [+] Done:", source)
     else:
@@ -217,10 +230,13 @@ def fontbakery():
     """
     Run FontBakery on the GoogleFonts repo.
     """
-    print("\n**** Run: FontBakery on .")
+    print("\n**** Run: FontBakery:")
     for source in sources:
         subprocess.call(
-            "cp fonts/%s-VF.ttf ~/Google/fonts/ofl/%s/" % (source, args.gfdir),
+            "fontbakery \
+                        check-googlefonts %s/%s-VF.ttf \
+                        --ghmarkdown docs/FONTBAKERY-REPORT-%s.md "
+            % (args.googlefonts, source, source),
             shell=True,
         )
         print("     [+] Done:", source)
@@ -234,10 +250,13 @@ def render_specimens():
     """
     print("\n**** Run: DrawBot")
     subprocess.call(
-        "python3 docs/drawbot-sources/basic-specimen.py > /dev/null 2>&1", shell=True
+        "python3 docs/drawbot-sources/basic-specimen.py \
+        > /dev/null 2>&1",
+        shell=True,
     )
     printG("    [!] Done")
     time.sleep(1)
+
 
 def build_vf():
     """
@@ -250,11 +269,10 @@ def build_vf():
     get_style_list()
     run_fontmake()
     rm_build_dirs()
-    ttfautohint()
     fix_dsig()
-    # Drawbot
-    if args.drawbot == True:
-        render_specimens()
+    # ttfautohint
+    if args.ttfautohint is not None:
+        ttfautohint()
     else:
         pass
     # GoogleFonts
@@ -264,12 +282,16 @@ def build_vf():
         pass
     # FontBakery
     if args.fontbakery == True:
-#        fontbakery()
-        pass
+        fontbakery()
     else:
         pass
-    quit()
+    # Drawbot
+    if args.drawbot == True:
+        render_specimens()
+    else:
+        pass
 
 
 if __name__ == "__main__":
     build_vf()
+    quit()
