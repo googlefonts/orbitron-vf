@@ -24,7 +24,9 @@ When building the fonts, the specimen can also be updated with any new changes t
 
  - [drawbot](http://drawbot.com)
  
- Then, use the flag:
+ Then, use the flag `--drawbot`:
 ```
-python3 sources/BUILD.py --drawbot
+python3 sources/BUILD.py --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss" --drawbot
 ```
+
+If you have any trouble building, please make an issue in this repository and hopefully someone will be able to help you.
