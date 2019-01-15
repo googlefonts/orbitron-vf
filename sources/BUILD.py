@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # Copyright 2018 The Google Font Tools Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,31 @@
 #
 # See AUTHORS.txt for the list of Authors and LICENSE.txt for the License.
 """
+BUILD VF: Automated build process for variable font onboarding.
+
+
+BASIC USE:
+
+This script is designed for use with the Fully Automated Font Repository
+standard, FAFR for short. Please see the git repo for redrence:
+
+-> https://github.com/eliheuer/fully-automated-font-repository
+
+
+FLAGS:
+
+[1]  --googlefonts ~/Google/fonts/ofl/foo    Gives upstream location
+[2]  --drawbot                               Render the specimen with DrawBot
+[3]  --ttfautohint "-args"                   Autohints fonts given args
+
+
+[1]: --googlefonts ~/Google/fonts/ofl/foo
+
+This argument lets the skript know where the upstream location of the fonts
+is in the Google Fonts upstream repository.
+
+
+
 Builds variable fonts using flags for input.
 """
 import argparse
@@ -69,25 +94,19 @@ def printY(prt):
 
 
 def intro():
-    """ 
+    """
     Gives basic script info.
     """
     printG("#    # #####                    #####    ################")
-    time.sleep(0.1)
     printG("#    # #                        #   #    #   ##         #")
-    time.sleep(0.1)
     printG(" #  #  ####                      #   #  #   # #   #######")
-    time.sleep(0.1)
     printG(" #  #  #     <---------------->  #    ##    # #      #")
-    time.sleep(0.1)
     printG("  ##   #                          #        #  #   ####")
-    time.sleep(0.1)
     printG("  ##   #                          ##########  #####")
-    time.sleep(0.1)
     print("\n**** Starting variable font build script:")
     print("     [+]", time.ctime())
     printG("    [!] Done")
-    time.sleep(0.1)
+    time.sleep(1)
 
 
 def display_args():
@@ -95,16 +114,12 @@ def display_args():
     Gives info about the flags.
     """
     print("\n**** Settings:")
-    time.sleep(0.1)
     print("     [+] --drawbot\t", args.drawbot)
-    time.sleep(0.1)
     print("     [+] --googlefonts\t", args.googlefonts)
-    time.sleep(0.1)
     print("     [+] --ttfautohint\t", args.ttfautohint)
-    time.sleep(0.1)
     print("     [+] --fontbakery\t", args.fontbakery)
-    time.sleep(0.1)
     printG("    [!] Done")
+    time.sleep(1)
 
 
 def check_root_dir():
@@ -164,8 +179,8 @@ def run_fontmake():
             "fontmake \
                       -g sources/%s.glyphs \
                       -o variable \
-                      --output-path fonts/%s-VF.ttf \
-            > /dev/null 2>&1"
+                      --verbose DEBUG \
+                      --output-path fonts/%s-VF.ttf"
             % (source, source),
             shell=True,
         )
@@ -184,6 +199,22 @@ def rm_build_dirs():
     time.sleep(1)
 
 
+def fix_dsig():
+    """
+    Fixes DSIG table
+    """
+    print("\n**** Run: gftools: fix DSIG")
+    for source in sources:
+        subprocess.call(
+            "gftools fix-dsig fonts/%s-VF.ttf --autofix"
+            % source,
+            shell=True,
+        )
+        print("     [+] Done:", source)
+    printG("    [!] Done")
+    time.sleep(1)
+
+
 def ttfautohint():
     """
     Runs ttfautohint with various flags set. For more info run: ttfautohint --help
@@ -194,36 +225,16 @@ def ttfautohint():
     print("     [+] In Directory:", cwd)
     for source in sources:
         subprocess.call(
-            "ttfautohint \
-                         %s \
-                         %s-VF.ttf %s-VF-Fix.ttf"
+            "ttfautohint %s %s-VF.ttf %s-VF-Fix.ttf"
             % (args.ttfautohint, source, source),
             shell=True,
         )
         subprocess.call("cp %s-VF-Fix.ttf %s-VF.ttf" % (source, source), shell=True)
         subprocess.call("rm -rf %s-VF-Fix.ttf" % source, shell=True)
-        os.chdir("..")
-        cwd = os.getcwd()
-        print("     [+] In Directory:", cwd)
         print("     [+] Done:", source)
-    printG("    [!] Done")
-    time.sleep(1)
-
-
-def fix_dsig():
-    """
-    Fixes DSIG table
-    """
-    print("\n**** Run: gftools")
-    for source in sources:
-        subprocess.call(
-            "gftools \
-                     fix-dsig fonts/%s-VF.ttf --autofix \
-                     > /dev/null 2>&1"
-            % source,
-            shell=True,
-        )
-        print("     [+] Done:", source)
+    os.chdir("..")
+    cwd = os.getcwd()
+    print("     [+] In Directory:", cwd)
     printG("    [!] Done")
     time.sleep(1)
 
@@ -251,13 +262,7 @@ def fontbakery():
     """
     print("\n**** Run: FontBakery:")
     for source in sources:
-        subprocess.call(
-            "fontbakery \
-                        check-googlefonts %s/%s-VF.ttf \
-                        --ghmarkdown docs/FONTBAKERY-REPORT-%s.md "
-            % (args.googlefonts, source, source),
-            shell=True,
-        )
+        subprocess.call("fontbakery check-googlefonts %s/%s-VF.ttf --ghmarkdown docs/FONTBAKERY-REPORT-%s.md" % (args.googlefonts, source, source), shell=True, )
         print("     [+] Done:", source)
     printG("    [!] Done")
     time.sleep(1)
@@ -289,22 +294,26 @@ def main():
     run_fontmake()
     rm_build_dirs()
     fix_dsig()
+
     # ttfautohint
     if args.ttfautohint is not None:
         ttfautohint()
     else:
         pass
+
     # GoogleFonts
     if args.googlefonts is not None:
         google_fonts()
     else:
         pass
+
     # FontBakery
     if args.fontbakery == True:
         fontbakery()
     else:
         pass
-    # Drawbot
+
+    # DrawBot
     if args.drawbot == True:
         render_specimens()
     else:

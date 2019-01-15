@@ -1,0 +1,25 @@
+* Development Notes ************
+
+** Notes ***********************
+PR is almost merged, just needs minor bug fixes.
+
+** Build info ******************
+python3 sources/BUILD.py --ttfautohint "-W --increase-x-height=0 --stem-width-mode=sss"
+
+** FontBakery ******************
+
+*** Fails **********************
+
+**** TODO Fail: Check 001
+     This is a bug in font bakery. Wont Fix.
+
+*** Warns **********************
+
+**** TODO Warn: Check 018
+     Nothing I can do here, wont fix.
+
+** Task List *******************
+   The following task are Emacs ORG mode todo items for this project.
+   They might not render correctly on GitHub so please view the raw 
+   test file or open with Emacs Org Mode to see time staps and 
+   compleations statuses.
