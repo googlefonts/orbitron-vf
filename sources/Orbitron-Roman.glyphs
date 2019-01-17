@@ -1,5 +1,8 @@
 {
 .appVersion = "1200";
+DisplayStrings = (
+G
+);
 classes = (
 {
 automatic = 1;
@@ -187,13 +190,8 @@ name = hheaLineGap;
 value = 0;
 },
 {
-name = "Axis Location";
-value = (
-{
-Axis = Weight;
-Location = 400;
-}
-);
+name = "New Parameter";
+value = "New Value";
 }
 );
 descender = -250;
@@ -248,15 +246,6 @@ value = -250;
 {
 name = hheaLineGap;
 value = 0;
-},
-{
-name = "Axis Location";
-value = (
-{
-Axis = Weight;
-Location = 900;
-}
-);
 }
 );
 descender = -250;
@@ -1893,20 +1882,6 @@ color = 4;
 glyphname = Iacute;
 layers = (
 {
-anchors = (
-{
-name = bottom;
-position = "{92, 0}";
-},
-{
-name = ogonek;
-position = "{120, 0}";
-},
-{
-name = top;
-position = "{92, 750}";
-}
-);
 layerId = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
 paths = (
 {
@@ -1931,38 +1906,24 @@ nodes = (
 width = 214;
 },
 {
-anchors = (
-{
-name = bottom;
-position = "{146, 0}";
-},
-{
-name = ogonek;
-position = "{202, 0}";
-},
-{
-name = top;
-position = "{146, 720}";
-}
-);
 layerId = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
 paths = (
 {
 closed = 1;
 nodes = (
-"206 770 LINE",
-"257 973 LINE",
-"100 973 LINE",
-"49 770 LINE"
+"190 770 LINE",
+"241 973 LINE",
+"84 973 LINE",
+"33 770 LINE"
 );
 },
 {
 closed = 1;
 nodes = (
-"211 0 LINE",
-"211 720 LINE",
-"55 720 LINE",
-"55 0 LINE"
+"195 0 LINE",
+"195 720 LINE",
+"39 720 LINE",
+"39 0 LINE"
 );
 }
 );
@@ -22110,10 +22071,10 @@ n
 );
 }
 );
-interpolationWeight = 600;
+interpolationWeight = 500;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.6;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.4;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.8;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.2;
 };
 name = Medium;
 weightClass = Medium;
@@ -22134,10 +22095,10 @@ n
 );
 }
 );
-interpolationWeight = 750;
+interpolationWeight = 700;
 instanceInterpolations = {
-"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.3;
-"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.7;
+"17A5F7C0-AED1-4270-89BA-BFDC1003B8A5" = 0.4;
+"D465923C-ABAE-4975-85A4-08C1BC9DA335" = 0.6;
 };
 isBold = 1;
 name = Bold;
