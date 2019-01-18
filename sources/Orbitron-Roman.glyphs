@@ -1,14 +1,7 @@
 {
 .appVersion = "1200";
 DisplayStrings = (
-"÷",
-$,
-"é",
-"ñ",
-"ö",
-"/v.sc",
-"/v.sc",
-"/w.sc"
+"Í"
 );
 classes = (
 {
@@ -1902,10 +1895,10 @@ paths = (
 {
 closed = 1;
 nodes = (
-"138 865 LINE",
-"172 1004 LINE",
-"93 1004 LINE",
-"58 865 LINE"
+"113 865 LINE",
+"147 1004 LINE",
+"68 1004 LINE",
+"33 865 LINE"
 );
 },
 {
