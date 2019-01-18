@@ -25,7 +25,7 @@ Fontbakery version: 0.6.6
 <summary>:bread: <b>PASS:</b> Is this a proper HTML snippet?</summary>
 
 * [com.google.fonts/check/004](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/004)
-* :bread: **PASS** /Users/Air/Google/fonts/ofl/orbitron/DESCRIPTION.en_us.html is a propper HTML file.
+* :bread: **PASS** ./DESCRIPTION.en_us.html is a propper HTML file.
 
 </details>
 <details>
@@ -60,7 +60,7 @@ Fontbakery version: 0.6.6
 <summary>:bread: <b>PASS:</b> Check font has a license.</summary>
 
 * [com.google.fonts/check/028](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/028)
-* :bread: **PASS** Found license at '/Users/Air/Google/fonts/ofl/orbitron/OFL.txt'
+* :bread: **PASS** Found license at './OFL.txt'
 
 </details>
 <details>
@@ -212,13 +212,6 @@ Fontbakery version: 0.6.6
 
 * [com.google.fonts/check/116](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/116)
 * :warning: **WARN** Even though unitsPerEm (1000) in this font is reasonable. It is strongly advised to consider changing it to 2000, since it will liely improve the quality of Variable Fonts by avoiding excessive rounding of coordinates on interpolations.
-
-</details>
-<details>
-<summary>:warning: <b>WARN:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
-
-* [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
-* :warning: **WARN** OS/2 xAvgCharWidth is 663 but it should be 674 which corresponds to the weighted average of the widths of the latin lowercase glyphs in the font
 
 </details>
 <details>
@@ -451,13 +444,20 @@ Fontbakery version: 0.6.6
 * [com.google.fonts/check/054](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/054)
 * :information_source: **INFO** Hinting filesize impact:
 
-|  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf |
+|  | Orbitron-Roman-VF.ttf |
 |:--- | ---:|
 | Dehinted Size | 43.8kb |
-| Hinted Size | 62.0kb |
-| Increase | 18.2kb |
-| Change   | 41.7 % |
+| Hinted Size | 43.6kb |
+| Increase | -272 bytes |
+| Change   | -0.6 % |
 
+
+</details>
+<details>
+<summary>:information_source: <b>INFO:</b> Font has old ttfautohint applied?</summary>
+
+* [com.google.fonts/check/056](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/056)
+* :information_source: **INFO** Could not detect which version of ttfautohint was used in this font. It is typically specified as a comment in the font version entries of the 'name' table. Such font version strings are currently: ['Version 2.000']
 
 </details>
 <details>
@@ -495,7 +495,7 @@ Please visit http://namecheck.fontdata.com/?q=Orbitron for more info.
 <summary>:information_source: <b>INFO:</b> Check for font-v versioning </summary>
 
 * [com.google.fonts/check/166](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/166)
-* :information_source: **INFO** Version string is: "Version 2.000; ttfautohint (v1.8.2)"
+* :information_source: **INFO** Version string is: "Version 2.000"
 The version string must ideally include a git commit hash and either a 'dev' or a 'release' suffix such as in the example below:
 "Version 1.3; git-0d08353-release"
 
@@ -504,7 +504,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:information_source: <b>INFO:</b> Font contains all required tables?</summary>
 
 * [com.google.fonts/check/052](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/052)
-* :information_source: **INFO** This font contains the following optional tables [cvt , fpgm, gasp, prep, loca, GSUB, GPOS, DSIG]
+* :information_source: **INFO** This font contains the following optional tables [prep, gasp, GSUB, DSIG, GPOS, loca]
 * :bread: **PASS** Font contains all required tables.
 
 </details>
@@ -512,7 +512,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:bread: <b>PASS:</b> Checking file is named canonically.</summary>
 
 * [com.google.fonts/check/001](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/001)
-* :bread: **PASS** /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf is named canonically.
+* :bread: **PASS** Orbitron-Roman-VF.ttf is named canonically.
 
 </details>
 <details>
@@ -569,13 +569,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/055](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/055)
 * :bread: **PASS** Version format in NAME table entries is correct.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Font has old ttfautohint applied?</summary>
-
-* [com.google.fonts/check/056](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/056)
-* :bread: **PASS** ttfautohint available in the system (1.8.2) is older than the one used in the font (1.8.2).
 
 </details>
 <details>
@@ -896,6 +889,13 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 </details>
 <details>
+<summary>:bread: <b>PASS:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
+
+* [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
+* :bread: **PASS** OS/2 xAvgCharWidth value is correct.
+
+</details>
+<details>
 <summary>:bread: <b>PASS:</b> Font has correct post table version (2 for TTF, 3 for OTF)?</summary>
 
 * [com.google.fonts/check/015](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/015)
@@ -1042,5 +1042,5 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 | :broken_heart: ERROR | :fire: FAIL | :warning: WARN | :zzz: SKIP | :information_source: INFO | :bread: PASS |
 |:-----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 2 | 3 | 32 | 7 | 99 |
-| 0% | 1% | 2% | 22% | 5% | 69% |
+| 0 | 2 | 2 | 32 | 8 | 99 |
+| 0% | 1% | 1% | 22% | 6% | 69% |
