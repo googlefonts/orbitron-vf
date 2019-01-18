@@ -1,12 +1,23 @@
 {
 .appVersion = "1200";
 DisplayStrings = (
+<<<<<<< HEAD
 "Í",
 "Ô",
 "ê",
 "/scaron",
 "Ú",
 "/Ydieresis"
+=======
+"÷",
+$,
+"é",
+"ñ",
+"ö",
+"/v.sc",
+"/v.sc",
+"/w.sc"
+>>>>>>> parent of 644c963... Fixing GF regression issues
 );
 classes = (
 {
@@ -1887,10 +1898,10 @@ paths = (
 {
 closed = 1;
 nodes = (
-"113 865 LINE",
-"147 1004 LINE",
-"68 1004 LINE",
-"33 865 LINE"
+"138 865 LINE",
+"172 1004 LINE",
+"93 1004 LINE",
+"58 865 LINE"
 );
 },
 {
