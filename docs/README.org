@@ -2,9 +2,13 @@
 
 ** Notes ***********************
 PR is almost merged, just needs minor bug fixes.
+The main problem in getting the medium and bold weights right with an avar table.
+*** Marcs weight fix
+Marc had an easy fix for the weight issue:
 
 ** Build info ******************
-python3 sources/BUILD.py --ttfautohint "-W --increase-x-height=0 --stem-width-mode=sss"
+python3 sources/BUILD.py --googlefonts ~/Google/fonts/ofl/orbitron --fontbakery --ttfautohint "-v -W --increase-x-height=0 --stem-width-mode=sss"
+
 
 ** FontBakery ******************
 
@@ -13,13 +17,21 @@ python3 sources/BUILD.py --ttfautohint "-W --increase-x-height=0 --stem-width-mo
 **** TODO Fail: Check 001
      This is a bug in font bakery. Wont Fix.
 
-*** Warns **********************
 
+*** Warns **********************
+    
 **** TODO Warn: Check 018
      Nothing I can do here, wont fix.
+
 
 ** Task List *******************
    The following task are Emacs ORG mode todo items for this project.
    They might not render correctly on GitHub so please view the raw 
    test file or open with Emacs Org Mode to see time staps and 
    compleations statuses.
+
+*** TODO Fix avar issue
+
+*** TODO Review all regressions
+**** TODO Review Regular
+**** TODO Review Black

@@ -1,16 +1,15 @@
 ## Fontbakery report
 
-Fontbakery version: 0.6.3
+Fontbakery version: 0.6.6
 
 <details>
-<summary><b>[24] Family checks</b></summary>
+<summary><b>[25] Family checks</b></summary>
 <details>
 <summary>:information_source: <b>INFO:</b> Do we have the latest version of FontBakery installed?</summary>
 
 * [com.google.fonts/check/fontbakery_version](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/fontbakery_version)
-* :information_source: **INFO** fontbakery (0.6.4)  - Well designed Font QA tool, written in Python 3
-  INSTALLED: 0.6.3
-  LATEST:    0.6.4
+* :information_source: **INFO** fontbakery (0.6.6)  - Well designed Font QA tool, written in Python 3
+  INSTALLED: 0.6.6 (latest)
 
 * :bread: **PASS** Font Bakery is up-to-date
 
@@ -41,6 +40,13 @@ Fontbakery version: 0.6.3
 
 * [com.google.fonts/check/006](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/006)
 * :bread: **PASS** DESCRIPTION.en_us.html is smaller than 1000 bytes.
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> Check METADATA.pb parse correctly. </summary>
+
+* [com.google.fonts/check/metadata/parses](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/metadata/parses)
+* :bread: **PASS** METADATA.pb parsed successfuly.
 
 </details>
 <details>
@@ -179,7 +185,7 @@ Fontbakery version: 0.6.3
 <br>
 </details>
 <details>
-<summary><b>[113] Orbitron-Roman-VF.ttf</b></summary>
+<summary><b>[118] Orbitron-Roman-VF.ttf</b></summary>
 <details>
 <summary>:fire: <b>FAIL:</b> METADATA.pb font.filename and font.post_script_name fields have equivalent values?</summary>
 
@@ -202,10 +208,17 @@ Fontbakery version: 0.6.3
 
 </details>
 <details>
+<summary>:warning: <b>WARN:</b> Stricter unitsPerEm criteria for Google Fonts. </summary>
+
+* [com.google.fonts/check/116](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/116)
+* :warning: **WARN** Even though unitsPerEm (1000) in this font is reasonable. It is strongly advised to consider changing it to 2000, since it will liely improve the quality of Variable Fonts by avoiding excessive rounding of coordinates on interpolations.
+
+</details>
+<details>
 <summary>:warning: <b>WARN:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
 
 * [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
-* :warning: **WARN** OS/2 xAvgCharWidth is 665 but it should be 675 which corresponds to the weighted average of the widths of the latin lowercase glyphs in the font
+* :warning: **WARN** OS/2 xAvgCharWidth is 663 but it should be 674 which corresponds to the weighted average of the widths of the latin lowercase glyphs in the font
 
 </details>
 <details>
@@ -213,6 +226,13 @@ Fontbakery version: 0.6.3
 
 * [com.google.fonts/check/020](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/020)
 * :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Font has ttfautohint params? </summary>
+
+* [com.google.fonts/check/has_ttfautohint_params](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/has_ttfautohint_params)
+* :zzz: **SKIP** Font appears to our heuristic as not hinted using ttfautohint.
 
 </details>
 <details>
@@ -293,6 +313,13 @@ Fontbakery version: 0.6.3
 
 </details>
 <details>
+<summary>:zzz: <b>SKIP:</b> Check if each glyph has the recommended amount of contours.</summary>
+
+* [com.google.fonts/check/153](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/153)
+* :zzz: **SKIP** Unfulfilled Conditions: not is_variable_font
+
+</details>
+<details>
 <summary>:zzz: <b>SKIP:</b> Check font has same encoded glyphs as version hosted on fonts.google.com</summary>
 
 * [com.google.fonts/check/154](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/154)
@@ -363,6 +390,13 @@ Fontbakery version: 0.6.3
 
 </details>
 <details>
+<summary>:zzz: <b>SKIP:</b> CFF table FontName must match name table ID 6 (PostScript name).</summary>
+
+* [com.adobe.fonts/check/postscript_name_cff_vs_name](https://github.com/googlefonts/fontbakery/search?q=com.adobe.fonts/check/postscript_name_cff_vs_name)
+* :zzz: **SKIP** Unfulfilled Conditions: is_cff
+
+</details>
+<details>
 <summary>:zzz: <b>SKIP:</b> Monospace font has hhea.advanceWidthMax equal to each glyph's advanceWidth?</summary>
 
 * [com.google.fonts/check/079](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/079)
@@ -419,10 +453,10 @@ Fontbakery version: 0.6.3
 
 |  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf |
 |:--- | ---:|
-| Dehinted Size | 37.5kb |
-| Hinted Size | 52.1kb |
-| Increase | 14.6kb |
-| Change   | 0.4 % |
+| Dehinted Size | 43.8kb |
+| Hinted Size | 62.0kb |
+| Increase | 18.2kb |
+| Change   | 41.7 % |
 
 
 </details>
@@ -461,7 +495,7 @@ Please visit http://namecheck.fontdata.com/?q=Orbitron for more info.
 <summary>:information_source: <b>INFO:</b> Check for font-v versioning </summary>
 
 * [com.google.fonts/check/166](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/166)
-* :information_source: **INFO** Version string is: "Version 2.000; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 0 -D latn -f none -a sss -W -X """
+* :information_source: **INFO** Version string is: "Version 2.000; ttfautohint (v1.8.2)"
 The version string must ideally include a git commit hash and either a 'dev' or a 'release' suffix such as in the example below:
 "Version 1.3; git-0d08353-release"
 
@@ -470,7 +504,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:information_source: <b>INFO:</b> Font contains all required tables?</summary>
 
 * [com.google.fonts/check/052](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/052)
-* :information_source: **INFO** This font contains the following optional tables [cvt , fpgm, GPOS, DSIG, gasp, prep, loca, GSUB]
+* :information_source: **INFO** This font contains the following optional tables [cvt , fpgm, gasp, prep, loca, GSUB, GPOS, DSIG]
 * :bread: **PASS** Font contains all required tables.
 
 </details>
@@ -535,13 +569,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/055](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/055)
 * :bread: **PASS** Version format in NAME table entries is correct.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Font has ttfautohint params? </summary>
-
-* [com.google.fonts/check/has_ttfautohint_params](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/has_ttfautohint_params)
-* :bread: **PASS** Font has ttfautohint params (-l 8 -r 50 -G 200 -x 0 -D latn -f none -a sss -W -X "")
 
 </details>
 <details>
@@ -687,20 +714,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 </details>
 <details>
-<summary>:bread: <b>PASS:</b> Is font em size (ideally) equal to 1000?</summary>
-
-* [com.google.fonts/check/116](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/116)
-* :bread: **PASS** Font em size is equal to 1000.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check if each glyph has the recommended amount of contours.</summary>
-
-* [com.google.fonts/check/153](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/153)
-* :bread: **PASS** All glyphs have the recommended amount of contours
-
-</details>
-<details>
 <summary>:bread: <b>PASS:</b> Copyright field for this font on METADATA.pb matches all copyright notice entries on the name table ?</summary>
 
 * [com.google.fonts/check/155](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/155)
@@ -739,7 +752,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:bread: <b>PASS:</b> Checking OS/2 Metrics match hhea Metrics.</summary>
 
 * [com.google.fonts/check/042](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/042)
-* :bread: **PASS** OS/2.sTypoAscender/Descender match hhea.ascent/descent.
+* :bread: **PASS** OS/2.sTypoAscender/Descender values match hhea.ascent/descent.
 
 </details>
 <details>
@@ -761,6 +774,27 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/aat](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/aat)
 * :bread: **PASS** There are no unwanted AAT tables.
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> All name entries referenced by fvar instances exist on the name table?</summary>
+
+* [com.google.fonts/check/fvar_name_entries](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/fvar_name_entries)
+* :bread: **PASS** OK
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> A variable font must have named instances.</summary>
+
+* [com.google.fonts/check/varfont_has_instances](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/varfont_has_instances)
+* :bread: **PASS** OK
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> Variable font weight coordinates must be multiples of 100.</summary>
+
+* [com.google.fonts/check/varfont_weight_instances](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/varfont_weight_instances)
+* :bread: **PASS** OK
 
 </details>
 <details>
@@ -851,7 +885,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:bread: <b>PASS:</b> Checking unitsPerEm value is reasonable.</summary>
 
 * [com.google.fonts/check/043](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/043)
-* :bread: **PASS** unitsPerEm value on the 'head' table is reasonable.
+* :bread: **PASS** unitsPerEm value (1000) on the 'head' table is reasonable.
 
 </details>
 <details>
@@ -988,6 +1022,13 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 </details>
 <details>
+<summary>:bread: <b>PASS:</b> The variable font 'wght' (Weight) axis coordinate must be within spec range of 1 to 1000 on all instances.</summary>
+
+* [com.google.fonts/check/wght_valid_range](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/wght_valid_range)
+* :bread: **PASS** OK
+
+</details>
+<details>
 <summary>:bread: <b>PASS:</b> Does the number of glyphs in the loca table match the maxp table?</summary>
 
 * [com.google.fonts/check/180](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/180)
@@ -1001,5 +1042,5 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 | :broken_heart: ERROR | :fire: FAIL | :warning: WARN | :zzz: SKIP | :information_source: INFO | :bread: PASS |
 |:-----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 2 | 2 | 29 | 7 | 97 |
-| 0% | 1% | 1% | 21% | 5% | 71% |
+| 0 | 2 | 3 | 32 | 7 | 99 |
+| 0% | 1% | 2% | 22% | 5% | 69% |
