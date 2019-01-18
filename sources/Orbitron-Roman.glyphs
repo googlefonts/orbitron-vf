@@ -1,7 +1,12 @@
 {
 .appVersion = "1200";
 DisplayStrings = (
-"Í"
+"Í",
+"Ô",
+"ê",
+"/scaron",
+"Ú",
+"/Ydieresis"
 );
 classes = (
 {
@@ -36,15 +41,6 @@ value = 1;
 {
 name = "Use Typo Metrics";
 value = 1;
-},
-{
-name = Axes;
-value = (
-{
-Name = Weight;
-Tag = wght;
-}
-);
 }
 );
 date = "2011-05-25 19:46:57 +0000";
@@ -159,11 +155,11 @@ capHeight = 720;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 1011;
 },
 {
 name = typoDescender;
-value = -250;
+value = -243;
 },
 {
 name = typoLineGap;
@@ -179,19 +175,15 @@ value = 243;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 1011;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -243;
 },
 {
 name = hheaLineGap;
 value = 0;
-},
-{
-name = "New Parameter";
-value = "New Value";
 }
 );
 descender = -250;
@@ -217,11 +209,11 @@ custom = Black;
 customParameters = (
 {
 name = typoAscender;
-value = 750;
+value = 1011;
 },
 {
 name = typoDescender;
-value = -250;
+value = -243;
 },
 {
 name = typoLineGap;
@@ -229,19 +221,19 @@ value = 0;
 },
 {
 name = winAscent;
-value = 973;
+value = 1011;
 },
 {
 name = winDescent;
-value = 230;
+value = 243;
 },
 {
 name = hheaAscender;
-value = 750;
+value = 1011;
 },
 {
 name = hheaDescender;
-value = -250;
+value = -243;
 },
 {
 name = hheaLineGap;
@@ -2669,26 +2661,46 @@ layers = (
 components = (
 {
 name = O;
-},
-{
-name = circumflexcomb.case;
-transform = "{1, 0, 0, 1, 383, 30}";
 }
 );
 layerId = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
+paths = (
+{
+closed = 1;
+nodes = (
+"333 864 LINE",
+"393 949 LINE",
+"451 864 LINE",
+"493 864 LINE",
+"422 981 LINE",
+"363 981 LINE",
+"292 864 LINE"
+);
+}
+);
 width = 828;
 },
 {
 components = (
 {
 name = O;
-},
-{
-name = circumflexcomb.case;
-transform = "{1, 0, 0, 1, 420, 0}";
 }
 );
 layerId = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
+paths = (
+{
+closed = 1;
+nodes = (
+"394 770 LINE",
+"419 814 LINE",
+"447 770 LINE",
+"581 770 LINE",
+"471 954 LINE",
+"371 954 LINE",
+"261 770 LINE"
+);
+}
+);
 width = 828;
 }
 );
@@ -3654,12 +3666,6 @@ color = 4;
 glyphname = Uacute;
 layers = (
 {
-anchors = (
-{
-name = _top;
-position = "{394, 750}";
-}
-);
 components = (
 {
 name = U;
@@ -4161,12 +4167,6 @@ color = 4;
 glyphname = Ydieresis;
 layers = (
 {
-anchors = (
-{
-name = _top;
-position = "{393, 750}";
-}
-);
 components = (
 {
 name = Y;
@@ -7610,13 +7610,13 @@ paths = (
 {
 closed = 1;
 nodes = (
-"267 763 LINE",
-"327 848 LINE",
-"385 763 LINE",
-"427 763 LINE",
-"356 880 LINE",
-"297 880 LINE",
-"226 763 LINE"
+"247 763 LINE",
+"307 848 LINE",
+"365 763 LINE",
+"407 763 LINE",
+"336 880 LINE",
+"277 880 LINE",
+"206 763 LINE"
 );
 }
 );
@@ -9721,26 +9721,46 @@ layers = (
 components = (
 {
 name = s;
-},
-{
-name = caroncomb;
-transform = "{1, 0, 0, 1, 341, -1}";
 }
 );
 layerId = "17A5F7C0-AED1-4270-89BA-BFDC1003B8A5";
+paths = (
+{
+closed = 1;
+nodes = (
+"351 764 LINE",
+"421 881 LINE",
+"380 881 LINE",
+"322 796 LINE",
+"262 881 LINE",
+"220 881 LINE",
+"292 764 LINE"
+);
+}
+);
 width = 686;
 },
 {
 components = (
 {
 name = s;
-},
-{
-name = caroncomb;
-transform = "{1, 0, 0, 1, 340, 0}";
 }
 );
 layerId = "D465923C-ABAE-4975-85A4-08C1BC9DA335";
+paths = (
+{
+closed = 1;
+nodes = (
+"400 638 LINE",
+"510 822 LINE",
+"375 822 LINE",
+"348 778 LINE",
+"321 822 LINE",
+"190 822 LINE",
+"300 638 LINE"
+);
+}
+);
 width = 686;
 }
 );
