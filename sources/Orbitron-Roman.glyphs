@@ -1,8 +1,7 @@
 {
-.appVersion = "1192";
+.appVersion = "1200";
 DisplayStrings = (
-"Hello",
-"World"
+"Ì"
 );
 classes = (
 {
@@ -2096,19 +2095,19 @@ paths = (
 {
 closed = 1;
 nodes = (
-"246 0 LINE",
-"246 720 LINE",
-"93 720 LINE",
-"93 0 LINE"
+"241 770 LINE",
+"190 973 LINE",
+"33 973 LINE",
+"84 770 LINE"
 );
 },
 {
 closed = 1;
 nodes = (
-"241 770 LINE",
-"190 973 LINE",
-"33 973 LINE",
-"84 770 LINE"
+"246 0 LINE",
+"246 720 LINE",
+"93 720 LINE",
+"93 0 LINE"
 );
 }
 );
