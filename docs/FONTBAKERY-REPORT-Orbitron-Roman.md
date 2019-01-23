@@ -192,19 +192,12 @@ Fontbakery version: 0.6.7
 <br>
 </details>
 <details>
-<summary><b>[117] Orbitron-Regular.ttf</b></summary>
+<summary><b>[117] Orbitron-Roman-VF.ttf</b></summary>
 <details>
-<summary>:fire: <b>FAIL:</b> Checking file is named canonically.</summary>
+<summary>:fire: <b>FAIL:</b> Are there unwanted tables?</summary>
 
-* [com.google.fonts/check/001](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/001)
-* :fire: **FAIL** Style name used in "/Users/Air/Google/fonts/ofl/orbitron/Orbitron-Regular.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic".
-
-</details>
-<details>
-<summary>:fire: <b>FAIL:</b> Check font has same encoded glyphs as version hosted on fonts.google.com</summary>
-
-* [com.google.fonts/check/154](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/154)
-* :fire: **FAIL** Font is missing the following glyphs from the previous release [0xE000]
+* [com.google.fonts/check/053](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/053)
+* :fire: **FAIL** Unwanted tables were found in the font and should be removed, either by fonttools/ttx or by editing them using the tool they are from: TTFA (from TTFAutohint)
 
 </details>
 <details>
@@ -222,17 +215,17 @@ Fontbakery version: 0.6.7
 
 </details>
 <details>
-<summary>:warning: <b>WARN:</b> Glyphs are similiar to Google Fonts version?</summary>
+<summary>:warning: <b>WARN:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
 
-* [com.google.fonts/check/118](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/118)
-* :warning: **WARN** Following glyphs differ greatly from Google Fonts version: [.notdef]
+* [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
+* :warning: **WARN** OS/2 xAvgCharWidth is 663 but it should be 674 which corresponds to the weighted average of the widths of the latin lowercase glyphs in the font
 
 </details>
 <details>
-<summary>:zzz: <b>SKIP:</b> Fonts have equal numbers of glyphs?</summary>
+<summary>:zzz: <b>SKIP:</b> Checking OS/2 usWeightClass.</summary>
 
-* [com.google.fonts/check/011](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/011)
-* :zzz: **SKIP** Unfulfilled Conditions: stylenames_are_canonical
+* [com.google.fonts/check/020](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/020)
+* :zzz: **SKIP** Unfulfilled Conditions: style
 
 </details>
 <details>
@@ -243,10 +236,199 @@ Fontbakery version: 0.6.7
 
 </details>
 <details>
+<summary>:zzz: <b>SKIP:</b> Checks METADATA.pb font.name field matches family name declared on the name table.</summary>
+
+* [com.google.fonts/check/092](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/092)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Checks METADATA.pb font.post_script_name matches postscript name declared on the name table.</summary>
+
+* [com.google.fonts/check/093](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/093)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.full_name value matches fullname declared on the name table?</summary>
+
+* [com.google.fonts/check/094](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/094)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.name value should be same as the family name declared on the name table.</summary>
+
+* [com.google.fonts/check/095](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/095)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata, style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.full_name and font.post_script_name fields have equivalent values ?</summary>
+
+* [com.google.fonts/check/096](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/096)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.filename and font.post_script_name fields have equivalent values?</summary>
+
+* [com.google.fonts/check/097](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/097)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.name field contains font name in right format?</summary>
+
+* [com.google.fonts/check/098](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/098)
+* :zzz: **SKIP** Unfulfilled Conditions: style, font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.full_name field contains font name in right format?</summary>
+
+* [com.google.fonts/check/099](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/099)
+* :zzz: **SKIP** Unfulfilled Conditions: style, font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.filename field contains font name in right format?</summary>
+
+* [com.google.fonts/check/100](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/100)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.post_script_name field contains font name in right format?</summary>
+
+* [com.google.fonts/check/101](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/101)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Copyright notices match canonical pattern?</summary>
+
+* [com.google.fonts/check/102](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/102)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Copyright notice on METADATA.pb should not contain 'Reserved Font Name'.</summary>
+
+* [com.google.fonts/check/103](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/103)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Copyright notice shouldn't exceed 500 chars.</summary>
+
+* [com.google.fonts/check/104](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/104)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Filename is set canonically?</summary>
+
+* [com.google.fonts/check/105](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/105)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata, canonical_filename
+
+</details>
+<details>
 <summary>:zzz: <b>SKIP:</b> METADATA.pb font.style "italic" matches font internals?</summary>
 
 * [com.google.fonts/check/106](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/106)
-* :zzz: **SKIP** This check only applies to italic fonts.
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.style "normal" matches font internals?</summary>
+
+* [com.google.fonts/check/107](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/107)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb font.name and font.full_name fields match the values declared on the name table?</summary>
+
+* [com.google.fonts/check/108](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/108)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Check if fontname is not camel cased.</summary>
+
+* [com.google.fonts/check/109](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/109)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Check font name is the same as family name.</summary>
+
+* [com.google.fonts/check/110](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/110)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Check that font weight has a canonical value.</summary>
+
+* [com.google.fonts/check/111](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/111)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Checking OS/2 usWeightClass matches weight specified at METADATA.pb.</summary>
+
+* [com.google.fonts/check/112](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/112)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb weight matches postScriptName.</summary>
+
+* [com.google.fonts/check/113](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/113)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> METADATA.pb: Font styles are named canonically?</summary>
+
+* [com.google.fonts/check/115](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/115)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Version number has increased since previous release on Google Fonts?</summary>
+
+* [com.google.fonts/check/117](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/117)
+* :zzz: **SKIP** Unfulfilled Conditions: api_gfonts_ttFont, github_gfonts_ttFont
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Glyphs are similiar to Google Fonts version?</summary>
+
+* [com.google.fonts/check/118](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/118)
+* :zzz: **SKIP** Unfulfilled Conditions: api_gfonts_ttFont
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Checking OS/2 fsSelection value.</summary>
+
+* [com.google.fonts/check/129](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/129)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Checking post.italicAngle value.</summary>
+
+* [com.google.fonts/check/130](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/130)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Checking head.macStyle value.</summary>
+
+* [com.google.fonts/check/131](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/131)
+* :zzz: **SKIP** Unfulfilled Conditions: style
 
 </details>
 <details>
@@ -254,6 +436,69 @@ Fontbakery version: 0.6.7
 
 * [com.google.fonts/check/153](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/153)
 * :zzz: **SKIP** Unfulfilled Conditions: not is_variable_font
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check font has same encoded glyphs as version hosted on fonts.google.com</summary>
+
+* [com.google.fonts/check/154](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/154)
+* :zzz: **SKIP** Unfulfilled Conditions: api_gfonts_ttFont
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Copyright field for this font on METADATA.pb matches all copyright notice entries on the name table ?</summary>
+
+* [com.google.fonts/check/155](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/155)
+* :zzz: **SKIP** Unfulfilled Conditions: font_metadata
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Font has all mandatory 'name' table entries ?</summary>
+
+* [com.google.fonts/check/156](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/156)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: FONT_FAMILY_NAME entries. </summary>
+
+* [com.google.fonts/check/157](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/157)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: FONT_SUBFAMILY_NAME entries. </summary>
+
+* [com.google.fonts/check/158](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/158)
+* :zzz: **SKIP** Unfulfilled Conditions: style_with_spaces
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: FULL_FONT_NAME entries. </summary>
+
+* [com.google.fonts/check/159](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/159)
+* :zzz: **SKIP** Unfulfilled Conditions: style_with_spaces
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: POSTSCRIPT_NAME entries. </summary>
+
+* [com.google.fonts/check/160](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/160)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: TYPOGRAPHIC_FAMILY_NAME entries. </summary>
+
+* [com.google.fonts/check/161](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/161)
+* :zzz: **SKIP** Unfulfilled Conditions: style
+
+</details>
+<details>
+<summary>:zzz: <b>SKIP:</b> Check name table: TYPOGRAPHIC_SUBFAMILY_NAME entries. </summary>
+
+* [com.google.fonts/check/162](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/162)
+* :zzz: **SKIP** Unfulfilled Conditions: style_with_spaces
 
 </details>
 <details>
@@ -332,12 +577,12 @@ Fontbakery version: 0.6.7
 * [com.google.fonts/check/054](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/054)
 * :information_source: **INFO** Hinting filesize impact:
 
-|  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Regular.ttf |
+|  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf |
 |:--- | ---:|
 | Dehinted Size | 43.8kb |
-| Hinted Size | 61.8kb |
-| Increase | 18.0kb |
-| Change   | 41.1 % |
+| Hinted Size | 62.4kb |
+| Increase | 18.6kb |
+| Change   | 42.5 % |
 
 
 </details>
@@ -385,8 +630,22 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:information_source: <b>INFO:</b> Font contains all required tables?</summary>
 
 * [com.google.fonts/check/052](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/052)
-* :information_source: **INFO** This font contains the following optional tables [GPOS, DSIG, fpgm, prep, loca, cvt , GSUB, gasp]
+* :information_source: **INFO** This font contains the following optional tables [prep, GSUB, fpgm, gasp, GPOS, loca, cvt , DSIG]
 * :bread: **PASS** Font contains all required tables.
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> Checking file is named canonically.</summary>
+
+* [com.google.fonts/check/001](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/001)
+* :bread: **PASS** /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf is named canonically.
+
+</details>
+<details>
+<summary>:bread: <b>PASS:</b> Fonts have equal numbers of glyphs?</summary>
+
+* [com.google.fonts/check/011](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/011)
+* :bread: **PASS** All font files in this family have an equal total ammount of glyphs.
 
 </details>
 <details>
@@ -408,13 +667,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/019](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/019)
 * :bread: **PASS** No need to substitute copyright, registered and trademark symbols in name table entries of this font.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checking OS/2 usWeightClass.</summary>
-
-* [com.google.fonts/check/020](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/020)
-* :bread: **PASS** OS/2 usWeightClass value looks good!
 
 </details>
 <details>
@@ -471,249 +723,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/074](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/074)
 * :bread: **PASS** None of the ASCII-only NAME table entries contain non-ASCII characteres.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checks METADATA.pb font.name field matches family name declared on the name table.</summary>
-
-* [com.google.fonts/check/092](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/092)
-* :bread: **PASS** Family name "Orbitron" is identical in METADATA.pb and on the TTF file.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checks METADATA.pb font.post_script_name matches postscript name declared on the name table.</summary>
-
-* [com.google.fonts/check/093](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/093)
-* :bread: **PASS** Postscript name "Orbitron-Regular" is identical in METADATA.pb and on the TTF file.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.full_name value matches fullname declared on the name table?</summary>
-
-* [com.google.fonts/check/094](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/094)
-* :bread: **PASS** Font fullname "Orbitron Regular" is identical in METADATA.pb and on the TTF file.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.name value should be same as the family name declared on the name table.</summary>
-
-* [com.google.fonts/check/095](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/095)
-* :bread: **PASS** OK: Family name "Orbitron" is identical in METADATA.pb and on the TTF file.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.full_name and font.post_script_name fields have equivalent values ?</summary>
-
-* [com.google.fonts/check/096](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/096)
-* :bread: **PASS** METADATA.pb font fields "full_name" and "post_script_name" have equivalent values.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.filename and font.post_script_name fields have equivalent values?</summary>
-
-* [com.google.fonts/check/097](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/097)
-* :bread: **PASS** METADATA.pb font fields "filename" and "post_script_name" have equivalent values.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.name field contains font name in right format?</summary>
-
-* [com.google.fonts/check/098](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/098)
-* :bread: **PASS** METADATA.pb font.name field contains font name in right format.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.full_name field contains font name in right format?</summary>
-
-* [com.google.fonts/check/099](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/099)
-* :bread: **PASS** METADATA.pb font.full_name field contains font name in right format. ('Orbitron' in 'Orbitron Regular')
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.filename field contains font name in right format?</summary>
-
-* [com.google.fonts/check/100](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/100)
-* :bread: **PASS** METADATA.pb filename field contains font name in right format.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.post_script_name field contains font name in right format?</summary>
-
-* [com.google.fonts/check/101](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/101)
-* :bread: **PASS** METADATA.pb postScriptName field contains font name in right format.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Copyright notices match canonical pattern?</summary>
-
-* [com.google.fonts/check/102](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/102)
-* :bread: **PASS** METADATA.pb: Copyright field 'Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)' matches canonical pattern.
-* :bread: **PASS** Name table entry: Copyright field 'Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)' matches canonical pattern.
-* :bread: **PASS** All copyright notice strings are good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Copyright notice on METADATA.pb should not contain 'Reserved Font Name'.</summary>
-
-* [com.google.fonts/check/103](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/103)
-* :bread: **PASS** METADATA.pb copyright field does not contain "Reserved Font Name".
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Copyright notice shouldn't exceed 500 chars.</summary>
-
-* [com.google.fonts/check/104](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/104)
-* :bread: **PASS** Copyright notice string is shorter than 500 chars.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Filename is set canonically?</summary>
-
-* [com.google.fonts/check/105](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/105)
-* :bread: **PASS** Filename in METADATA.pb is set canonically.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.style "normal" matches font internals?</summary>
-
-* [com.google.fonts/check/107](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/107)
-* :bread: **PASS** METADATA.pb font.style "normal" matches font internals.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb font.name and font.full_name fields match the values declared on the name table?</summary>
-
-* [com.google.fonts/check/108](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/108)
-* :bread: **PASS** METADATA.pb familyname and fullName fields match corresponding name table entries.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Check if fontname is not camel cased.</summary>
-
-* [com.google.fonts/check/109](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/109)
-* :bread: **PASS** Font name is not camel-cased.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Check font name is the same as family name.</summary>
-
-* [com.google.fonts/check/110](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/110)
-* :bread: **PASS** Font name is the same as family name.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Check that font weight has a canonical value.</summary>
-
-* [com.google.fonts/check/111](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/111)
-* :bread: **PASS** Font weight has a canonical value.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checking OS/2 usWeightClass matches weight specified at METADATA.pb.</summary>
-
-* [com.google.fonts/check/112](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/112)
-* :bread: **PASS** OS/2 usWeightClass matches weight specified at METADATA.pb
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb weight matches postScriptName.</summary>
-
-* [com.google.fonts/check/113](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/113)
-* :bread: **PASS** Weight value matches postScriptName.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> METADATA.pb: Font styles are named canonically?</summary>
-
-* [com.google.fonts/check/115](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/115)
-* :bread: **PASS** Font styles are named canonically.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Version number has increased since previous release on Google Fonts?</summary>
-
-* [com.google.fonts/check/117](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/117)
-* :bread: **PASS** Version number 2.0 is greater than version on Google Fonts GitHub (1.001) and production servers (1.001).
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checking OS/2 fsSelection value.</summary>
-
-* [com.google.fonts/check/129](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/129)
-* :bread: **PASS** OS/2 fsSelection REGULAR bit is properly set.
-* :bread: **PASS** OS/2 fsSelection ITALIC bit is properly set.
-* :bread: **PASS** OS/2 fsSelection BOLD bit is properly set.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checking post.italicAngle value.</summary>
-
-* [com.google.fonts/check/130](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/130)
-* :bread: **PASS** Value of post.italicAngle is 0.0 with style='Regular'.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Checking head.macStyle value.</summary>
-
-* [com.google.fonts/check/131](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/131)
-* :bread: **PASS** head macStyle ITALIC bit is properly set.
-* :bread: **PASS** head macStyle BOLD bit is properly set.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Copyright field for this font on METADATA.pb matches all copyright notice entries on the name table ?</summary>
-
-* [com.google.fonts/check/155](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/155)
-* :bread: **PASS** Copyright field for this font on METADATA.pb matches copyright notice entries on the name table.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Font has all mandatory 'name' table entries ?</summary>
-
-* [com.google.fonts/check/156](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/156)
-* :bread: **PASS** Font contains values for all mandatory name table entries.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: FONT_FAMILY_NAME entries. </summary>
-
-* [com.google.fonts/check/157](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/157)
-* :bread: **PASS** FONT_FAMILY_NAME entries are all good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: FONT_SUBFAMILY_NAME entries. </summary>
-
-* [com.google.fonts/check/158](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/158)
-* :bread: **PASS** FONT_SUBFAMILY_NAME entries are all good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: FULL_FONT_NAME entries. </summary>
-
-* [com.google.fonts/check/159](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/159)
-* :bread: **PASS** FULL_FONT_NAME entries are all good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: POSTSCRIPT_NAME entries. </summary>
-
-* [com.google.fonts/check/160](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/160)
-* :bread: **PASS** POSTCRIPT_NAME entries are all good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: TYPOGRAPHIC_FAMILY_NAME entries. </summary>
-
-* [com.google.fonts/check/161](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/161)
-* :bread: **PASS** TYPOGRAPHIC_FAMILY_NAME entries are all good.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check name table: TYPOGRAPHIC_SUBFAMILY_NAME entries. </summary>
-
-* [com.google.fonts/check/162](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/162)
-* :bread: **PASS** TYPOGRAPHIC_SUBFAMILY_NAME entries are all good.
 
 </details>
 <details>
@@ -836,13 +845,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 </details>
 <details>
-<summary>:bread: <b>PASS:</b> Are there unwanted tables?</summary>
-
-* [com.google.fonts/check/053](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/053)
-* :bread: **PASS** There are no unwanted tables.
-
-</details>
-<details>
 <summary>:bread: <b>PASS:</b> Glyph names are all valid?</summary>
 
 * [com.google.fonts/check/058](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/058)
@@ -889,13 +891,6 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 * [com.google.fonts/check/044](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/044)
 * :bread: **PASS** All font version fields match.
-
-</details>
-<details>
-<summary>:bread: <b>PASS:</b> Check if OS/2 xAvgCharWidth is correct.</summary>
-
-* [com.google.fonts/check/034](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/034)
-* :bread: **PASS** OS/2 xAvgCharWidth value is correct.
 
 </details>
 <details>
@@ -1045,5 +1040,5 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 | :broken_heart: ERROR | :fire: FAIL | :warning: WARN | :zzz: SKIP | :information_source: INFO | :bread: PASS |
 |:-----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 2 | 3 | 14 | 7 | 117 |
-| 0% | 1% | 2% | 10% | 5% | 82% |
+| 0 | 1 | 3 | 50 | 7 | 82 |
+| 0% | 1% | 2% | 35% | 5% | 57% |
