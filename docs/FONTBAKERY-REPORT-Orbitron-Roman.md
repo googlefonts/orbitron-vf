@@ -573,9 +573,9 @@ Fontbakery version: 0.6.7
 |  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf |
 |:--- | ---:|
 | Dehinted Size | 43.8kb |
-| Hinted Size | 61.9kb |
-| Increase | 18.1kb |
-| Change   | 41.3 % |
+| Hinted Size | 62.1kb |
+| Increase | 18.2kb |
+| Change   | 41.7 % |
 
 
 </details>
@@ -623,7 +623,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:information_source: <b>INFO:</b> Font contains all required tables?</summary>
 
 * [com.google.fonts/check/052](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/052)
-* :information_source: **INFO** This font contains the following optional tables [fpgm, prep, cvt , GSUB, gasp, DSIG, GPOS, loca]
+* :information_source: **INFO** This font contains the following optional tables [GPOS, gasp, GSUB, loca, fpgm, cvt , DSIG, prep]
 * :bread: **PASS** Font contains all required tables.
 
 </details>

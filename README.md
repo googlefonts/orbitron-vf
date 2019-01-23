@@ -18,7 +18,7 @@ Note: A few dependencies are required for this to work, please see the source do
 
 To build the fonts; clone this repo, then navigate to its root directory in a terminal and run:
 ```
-python3 sources/BUILD.py --ttfautohint "-I -W --increase-x-height=0 --stem-width-mode=sss --default-script=latn"
+python3 sources/BUILD.py --ttfautohint "-v -W --increase-x-height=0 --stem-width-mode=sss"
 ```
 This will build new fonts in the `fonts` directory and apply autohinting.
 
