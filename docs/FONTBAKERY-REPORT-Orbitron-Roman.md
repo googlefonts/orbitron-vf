@@ -194,13 +194,6 @@ Fontbakery version: 0.6.7
 <details>
 <summary><b>[117] Orbitron-Roman-VF.ttf</b></summary>
 <details>
-<summary>:fire: <b>FAIL:</b> Are there unwanted tables?</summary>
-
-* [com.google.fonts/check/053](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/053)
-* :fire: **FAIL** Unwanted tables were found in the font and should be removed, either by fonttools/ttx or by editing them using the tool they are from: TTFA (from TTFAutohint)
-
-</details>
-<details>
 <summary>:warning: <b>WARN:</b> Checking OS/2 achVendID.</summary>
 
 * [com.google.fonts/check/018](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/018)
@@ -580,9 +573,9 @@ Fontbakery version: 0.6.7
 |  | /Users/Air/Google/fonts/ofl/orbitron/Orbitron-Roman-VF.ttf |
 |:--- | ---:|
 | Dehinted Size | 43.8kb |
-| Hinted Size | 62.4kb |
-| Increase | 18.6kb |
-| Change   | 42.5 % |
+| Hinted Size | 62.1kb |
+| Increase | 18.2kb |
+| Change   | 41.7 % |
 
 
 </details>
@@ -630,7 +623,7 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 <summary>:information_source: <b>INFO:</b> Font contains all required tables?</summary>
 
 * [com.google.fonts/check/052](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/052)
-* :information_source: **INFO** This font contains the following optional tables [prep, GSUB, fpgm, gasp, GPOS, loca, cvt , DSIG]
+* :information_source: **INFO** This font contains the following optional tables [loca, gasp, GSUB, GPOS, cvt , prep, DSIG, fpgm]
 * :bread: **PASS** Font contains all required tables.
 
 </details>
@@ -845,6 +838,13 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 </details>
 <details>
+<summary>:bread: <b>PASS:</b> Are there unwanted tables?</summary>
+
+* [com.google.fonts/check/053](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/053)
+* :bread: **PASS** There are no unwanted tables.
+
+</details>
+<details>
 <summary>:bread: <b>PASS:</b> Glyph names are all valid?</summary>
 
 * [com.google.fonts/check/058](https://github.com/googlefonts/fontbakery/search?q=com.google.fonts/check/058)
@@ -1040,5 +1040,5 @@ The version string must ideally include a git commit hash and either a 'dev' or 
 
 | :broken_heart: ERROR | :fire: FAIL | :warning: WARN | :zzz: SKIP | :information_source: INFO | :bread: PASS |
 |:-----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 1 | 3 | 50 | 7 | 82 |
-| 0% | 1% | 2% | 35% | 5% | 57% |
+| 0 | 0 | 3 | 50 | 7 | 83 |
+| 0% | 0% | 2% | 35% | 5% | 58% |

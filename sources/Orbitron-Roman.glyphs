@@ -1,7 +1,7 @@
 {
 .appVersion = "1200";
 DisplayStrings = (
-"Ì"
+a
 );
 classes = (
 {
@@ -145,6 +145,13 @@ name = ss03;
 );
 fontMaster = (
 {
+alignmentZones = (
+"{750, 15}",
+"{720, 15}",
+"{580, 15}",
+"{0, -15}",
+"{-250, -15}"
+);
 ascender = 750;
 capHeight = 720;
 customParameters = (
@@ -198,6 +205,13 @@ widthValue = 5;
 xHeight = 580;
 },
 {
+alignmentZones = (
+"{750, 15}",
+"{720, 15}",
+"{580, 15}",
+"{0, -15}",
+"{-250, -15}"
+);
 ascender = 750;
 capHeight = 720;
 custom = Black;
