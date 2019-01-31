@@ -211,9 +211,10 @@ def run_fontmake_static():
     printG("    [!] Done")
 
 
-def move_static_fonts():
+def prep_static_fonts():
     """
     Move static fonts to the fonts/static directory.
+    Run ttfautohint on all fonts and fix missing dsig
     """
     print("\n**** Moving static fonts:")
     for path in glob.glob("instance_ttf/*.ttf"):
@@ -223,6 +224,13 @@ def move_static_fonts():
     for static_font in glob.glob("fonts/static-fonts/*.ttf"):
         print(static_font)
         subprocess.call("gftools fix-dsig %s --autofix" % static_font, shell=True)
+        subprocess.call(
+            "ttfautohint %s %s temp.ttf"
+            % (args.ttfautohint, static_font),
+            shell=True,
+        )
+        subprocess.call("cp temp.ttf %s" % static_font, shell=True)
+        subprocess.call("rm -rf temp.ttf", shell=True)
     time.sleep(1)
     printG("    [!] Done")
 
@@ -359,7 +367,7 @@ def main():
     # make static fonts
     if args.static == True:
         run_fontmake_static()
-        move_static_fonts()
+        prep_static_fonts()
     else:
         pass
 
