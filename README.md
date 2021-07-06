@@ -13,30 +13,27 @@ Orbitron was designed so that graphic designers in the future will have some alt
 <!-- Updated image from variable mastering fork -->
 ![Orbitron](https://github.com/eliheuer/orbitron/raw/vf-mastering/docs/images/animated-specimen.gif)
 
-## Building From Source
-Note: A few dependencies are required for this to work, please see the source documentation [here](https://github.com/eliheuer/orbitron-vf/tree/master/sources).
+## Building
 
-To build the fonts; clone this repo, then navigate to its root directory in a terminal and run:
-```
-python3 sources/BUILD.py --ttfautohint "-v -W --increase-x-height=0 --stem-width-mode=sss" --static
-```
-This will build new fonts in the `fonts` directory and apply autohinting.
+Fonts are built automatically by GitHub Actions - take a look in the "Actions" tab for the latest build.
 
-Additional options are available by adding flags to the build script, for example, if you wanted to update the DrawBot specimen, prepare the font for a PR to Google Fonts and test with FontBakery, we could run:
-```
-python3 sources/BUILD.py --googlefonts ~/Google/fonts/ofl/orbitron --fontbakery --drawbot --ttfautohint "-v -W --increase-x-height=0 --stem-width-mode=sss" --static
-```
-For more help, run:
-```
-python3 sources/BUILD.py --help
-```
+If you particularly want to build fonts manually on your own computer, you will need to install the [`yq` utility](https://github.com/mikefarah/yq). On OS X with Homebrew, type `brew install yq`; on Linux, try `snap install yq`; if all else fails, try the instructions on the linked page.
+
+Then:
+
+* `make build` will produce font files.
+* `make test` will run [FontBakery](https://github.com/googlefonts/fontbakery)'s quality assurance tests.
+* `make proof` will generate HTML proof files.
 
 ## License
-Orbitron is licensed under the SIL Open Font License v1.1 (<http://scripts.sil.org/OFL>). 
-To view the copyright and specific terms and conditions please refer to [OFL.txt](https://github.com/theleagueof/orbitron/blob/master/OFL.txt)
 
-## Downloading Font Files (TTF)
-Find binary releases on <https://github.com/theleagueof/orbitron/releases>
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at
+http://scripts.sil.org/OFL
+
+## Repository Layout
+
+This font repository structure is inspired by [Unified Font Repository v0.3](https://github.com/unified-font-repository/Unified-Font-Repository), modified for the Google Fonts workflow.
 
 ## Installation Instructions
 - [GNU+Linux](https://wiki.archlinux.org/index.php/fonts#Manual_installation)
