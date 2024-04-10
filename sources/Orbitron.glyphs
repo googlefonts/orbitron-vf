@@ -5,10 +5,6 @@ axes = (
 {
 name = Weight;
 tag = wght;
-},
-{
-name = Width;
-tag = wdth;
 }
 );
 classes = (
@@ -143,8 +139,7 @@ tag = ss03;
 fontMaster = (
 {
 axesValues = (
-81,
-5
+81
 );
 customParameters = (
 {
@@ -218,8 +213,7 @@ visible = 1;
 },
 {
 axesValues = (
-155,
-5
+155
 );
 customParameters = (
 {
@@ -20502,8 +20496,7 @@ unicode = 57344;
 instances = (
 {
 axesValues = (
-81,
-100
+81
 );
 customParameters = (
 {
@@ -20527,8 +20520,7 @@ name = Regular;
 },
 {
 axesValues = (
-108,
-100
+108
 );
 customParameters = (
 {
@@ -20554,8 +20546,7 @@ weightClass = 500;
 },
 {
 axesValues = (
-120,
-100
+120
 );
 customParameters = (
 {
@@ -20581,8 +20572,7 @@ weightClass = 600;
 },
 {
 axesValues = (
-132,
-100
+132
 );
 customParameters = (
 {
@@ -20609,8 +20599,7 @@ weightClass = 700;
 },
 {
 axesValues = (
-144,
-100
+144
 );
 customParameters = (
 {
@@ -20636,8 +20625,7 @@ weightClass = 800;
 },
 {
 axesValues = (
-155,
-100
+155
 );
 customParameters = (
 {
